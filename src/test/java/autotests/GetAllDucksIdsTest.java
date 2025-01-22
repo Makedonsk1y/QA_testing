@@ -15,7 +15,7 @@ import java.util.List;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 import static com.consol.citrus.validation.DelegatingPayloadVariableExtractor.Builder.fromBody;
 
-public class GetAllDucksIdsTest extends TestNGCitrusSpringSupport {
+public class GetAllDucksIdsTest extends DuckBaseTest {
     private List<String> createdDuckIds = new ArrayList<>();
     @Test(description = "Проверка получения всех ID уток")
     @CitrusTest
@@ -34,38 +34,6 @@ public class GetAllDucksIdsTest extends TestNGCitrusSpringSupport {
         saveDuckId(runner);
     }
 
-    public void createDuck(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
-        runner.$(
-                http()
-                        .client("http://localhost:2222")
-                        .send()
-                        .post("/api/duck/create")
-                        .message()
-                        .contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .body( "{\n" +
-                                "\"color\": \"" + color + "\",\n" +
-                                "\"height\": " + height + ",\n" +
-                                "\"material\": \"" + material + "\",\n" +
-                                "\"sound\": \"" + sound + "\",\n" +
-                                "\"wingsState\": \"" + wingsState + "\"\n" + "}"));
-    }
-
-    private void saveDuckId(TestCaseRunner runner){
-        runner.$(
-                http()
-                        .client("http://localhost:2222")
-                        .receive()
-                        .response()
-                        .message()
-                        .extract(fromBody().expression("$.id", "duckId"))
-        );
-
-        runner.$(action -> {
-            String duckId = action.getVariable("duckId");
-            createdDuckIds.add(duckId);
-        });
-    }
-
     public void getAllDuckIds(TestCaseRunner runner){
         runner.$(
                 http().client("http://localhost:2222").send().get("/api/duck/getAllIds")
@@ -79,6 +47,4 @@ public class GetAllDucksIdsTest extends TestNGCitrusSpringSupport {
                         .body(expectedIds.toString().replaceAll("[\\[\\] ]", "") )
         );
     }
-
-
 }
