@@ -3,31 +3,28 @@ package autotests;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
-import com.consol.citrus.testng.spring.TestNGCitrusSpringSupport;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
-import static com.consol.citrus.validation.DelegatingPayloadVariableExtractor.Builder.fromBody;
+
 
 public class DuckCreateTest extends DuckBaseTest {
-    @Test(description = "Проверка создания утки")
+    @Test(description = "Проверка создания утки с материалом rubber")
     @CitrusTest
-    public void successfulCreateDucks(@Optional @CitrusResource TestCaseRunner runner){
-        // Создаем утку с material = rubber
-        createDuckAndValidate(runner, "red", 0.53, "rubber", "quack", "ACTIVE");
-
-        // Создаем утку с material = wood
-        createDuckAndValidate(runner, "blue", 0.60, "wood", "quack", "FIXED");
+    public void createDuckWithMaterialRubber(@Optional @CitrusResource TestCaseRunner runner){
+        createDuck(runner, "red", 0.53, "rubber", "quack", "FIXED");
+        saveDuckId(runner);
+        validateDuckResponse(runner, "red", 0.53, "rubber", "quack", "FIXED");
     }
 
-    private void createDuckAndValidate(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
-
-        createDuck(runner, color, height, material, sound, wingsState);
+    @Test(description = "Проверка создания утки с материалом wood")
+    @CitrusTest
+    public void createDuckWithMaterialWood(@Optional @CitrusResource TestCaseRunner runner){
+        createDuck(runner, "red", 0.53, "wood", "quack", "FIXED");
         saveDuckId(runner);
-        validateDuckResponse(runner, color, height, material, sound, wingsState);
+        validateDuckResponse(runner, "red", 0.53, "wood", "quack", "FIXED");
     }
 
     private void validateDuckResponse(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {

@@ -3,33 +3,46 @@ package autotests;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
-import com.consol.citrus.testng.spring.TestNGCitrusSpringSupport;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-
+import java.util.concurrent.atomic.AtomicInteger;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
-import static com.consol.citrus.validation.DelegatingPayloadVariableExtractor.Builder.fromBody;
+
 
 public class DuckQuackTest extends DuckBaseTest {
-    @Test (description = "Проверка того, что утки с четным и нечетным id издают звуки")
+
+    @Test (description = "Проверка того, что утки с четным id издают звуки")
     @CitrusTest
-    public void successfulQuack(@Optional @CitrusResource TestCaseRunner runner){
+    public void successfulQuackWithEvenId(@Optional @CitrusResource TestCaseRunner runner){
 
-        createDuckAndSaveId(runner, "red", 0.53, "rubber", "quack", "ACTIVE");
-        String firstDuckId = "${duckId}";
+        AtomicInteger id = new AtomicInteger();
+        do {
+            createDuck(runner, "green", 0.50, "plastic", "quack", "ACTIVE");
+            saveDuckId(runner);
 
-        createDuckAndSaveId(runner, "blue", 0.60, "plastic", "quack", "ACTIVE");
-        String secondDuckId = "${duckId}";
-
-        checkDuckQuack(runner, firstDuckId, 2, 3, "quack-quack-quack, quack-quack-quack");
-        checkDuckQuack(runner, secondDuckId, 2, 3, "quack-quack-quack, quack-quack-quack");
+            runner.$(action -> {
+                id.set(Integer.parseInt(action.getVariable("duckId")));
+            });
+        } while (id.get() % 2 != 0);
+        checkDuckQuack(runner, String.valueOf(id.get()), 2, 3, "quack-quack-quack, quack-quack-quack");
     }
 
-    private void createDuckAndSaveId(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
-        createDuck(runner, color, height, material, sound, wingsState);
-        saveDuckId(runner);
+    @Test (description = "Проверка того, что утки с нечетным id издают звуки")
+    @CitrusTest
+    public void successfulQuackWithOddId(@Optional @CitrusResource TestCaseRunner runner){
+
+        AtomicInteger id = new AtomicInteger();
+        do {
+            createDuck(runner, "green", 0.50, "plastic", "quack", "ACTIVE");
+            saveDuckId(runner);
+
+            runner.$(action -> {
+                id.set(Integer.parseInt(action.getVariable("duckId")));
+            });
+        } while (id.get() % 2 == 0);
+        checkDuckQuack(runner, String.valueOf(id.get()), 2, 3, "quack-quack-quack, quack-quack-quack");
     }
 
     private void checkDuckQuack(TestCaseRunner runner, String duckId, int repetitionCount, int soundCount, String expectedSound) {
