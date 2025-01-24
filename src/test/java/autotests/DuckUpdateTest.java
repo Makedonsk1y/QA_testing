@@ -3,24 +3,20 @@ package autotests;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
-import com.consol.citrus.testng.spring.TestNGCitrusSpringSupport;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
-import static com.consol.citrus.validation.DelegatingPayloadVariableExtractor.Builder.fromBody;
 
-public class DuckUpdateTest extends TestNGCitrusSpringSupport {
+
+public class DuckUpdateTest extends DuckBaseTest {
     @Test(description = "Проверка обновления цвета и высоты утки")
     @CitrusTest
     public void successfulUpdateColorAndHeight(@Optional @CitrusResource TestCaseRunner runner){
-        createDuckAndSaveId(runner, "red", 0.53, "rubber", "quack", "ACTIVE");
-
-        // Обновляем цвет и высоту утки
+        createDuck(runner, "red", 0.53, "rubber", "quack", "ACTIVE");
+        saveDuckId(runner);
         updateDuck(runner, "${duckId}", "blue", 0.3, "rubber", "quack", "FIXED");
-
         checkDuckProperties(runner, "${duckId}", "blue", 0.3, "rubber", "quack", "FIXED");
     }
 
@@ -28,45 +24,10 @@ public class DuckUpdateTest extends TestNGCitrusSpringSupport {
     @CitrusTest
     public void successfulUpdateColorAndSound(@Optional @CitrusResource TestCaseRunner runner){
 
-        createDuckAndSaveId(runner, "green", 0.60, "plastic", "quack", "ACTIVE");
-
-        // Обновляем цвет и звук утки
-        updateDuck(runner, "${duckId}", "yellow", 0.60, "plastic", "squeak", "ACTIVE");
-
-
-        checkDuckProperties(runner, "${duckId}", "yellow", 0.60, "plastic", "squeak", "ACTIVE");
-    }
-
-    private void createDuckAndSaveId(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
-        createDuck(runner, color, height, material, sound, wingsState);
+        createDuck(runner, "green", 0.60, "plastic", "quack", "ACTIVE");
         saveDuckId(runner);
-    }
-
-    public void createDuck(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
-        runner.$(
-                http()
-                        .client("http://localhost:2222")
-                        .send()
-                        .post("/api/duck/create")
-                        .message()
-                        .contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .body( "{\n" +
-                                "\"color\": \"" + color + "\",\n" +
-                                "\"height\": " + height + ",\n" +
-                                "\"material\": \"" + material + "\",\n" +
-                                "\"sound\": \"" + sound + "\",\n" +
-                                "\"wingsState\": \"" + wingsState + "\"\n" + "}"));
-    }
-
-    private void saveDuckId(TestCaseRunner runner) {
-        runner.$(
-                http()
-                        .client("http://localhost:2222")
-                        .receive()
-                        .response()
-                        .message()
-                        .extract(fromBody().expression("$.id", "duckId"))
-        );
+        updateDuck(runner, "${duckId}", "yellow", 0.60, "plastic", "squeak", "ACTIVE");
+        checkDuckProperties(runner, "${duckId}", "yellow", 0.60, "plastic", "squeak", "ACTIVE");
     }
 
     private void updateDuck(TestCaseRunner runner, String duckId, String color, double height, String material, String sound, String wingsState) {
