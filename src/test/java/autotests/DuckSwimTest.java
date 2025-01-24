@@ -27,8 +27,10 @@ public class DuckSwimTest extends DuckBaseTest {
     public void swimWithInvalidId(@Optional @CitrusResource TestCaseRunner runner){
        // int[] existingIds = getAllDuckIds(runner);
        // int invalidId = generateInvalidId(existingIds);
-        int invalidId = 99999;
-        duckSwim(runner, String.valueOf(invalidId));
+        createDuck(runner, "red", 0.43, "wood", "quack", "ACTIVE");
+        saveDuckId(runner);
+        deleteDuck(runner, "${duckId}");
+        duckSwim(runner, "${duckId}");
         validateBadResponse(runner);
     }
 
