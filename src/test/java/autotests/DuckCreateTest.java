@@ -17,17 +17,17 @@ public class DuckCreateTest extends DuckBaseTest {
     @CitrusTest
     public void createDuckWithMaterialRubber(@Optional @CitrusResource TestCaseRunner runner){
         createDuck(runner, "red", 0.53, "rubber", "quack", "FIXED");
-        validateDuckResponse(runner, jsonPath().expression("$.material", "rubber"));
+        validateDuckResponse(runner, "red", 0.53, "rubber", "quack", "FIXED");
     }
 
     @Test(description = "Проверка создания утки с материалом wood")
     @CitrusTest
     public void createDuckWithMaterialWood(@Optional @CitrusResource TestCaseRunner runner){
         createDuck(runner, "red", 0.53, "wood", "quack", "FIXED");
-        validateDuckResponse(runner, jsonPath().expression("$.material", "wood"));
+        validateDuckResponse(runner, "red", 0.53, "wood", "quack", "FIXED");
     }
 
-    public void validateDuckResponse(TestCaseRunner runner, JsonPathMessageValidationContext.Builder body) {
+    public void validateDuckResponse(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
         runner.$(
                 http()
                         .client("http://localhost:2222")
@@ -35,7 +35,13 @@ public class DuckCreateTest extends DuckBaseTest {
                         .response(HttpStatus.OK)
                         .message()
                         .type(MessageType.JSON)
-                        .validate(body)
+                        .validate(jsonPath()
+                                .expression("$.color", color)
+                                .expression("$.height", height)
+                                .expression("$.material", material)
+                                .expression("$.sound", sound)
+                                .expression("$.wingsState", wingsState)
+                        )
         );
     }
 }
