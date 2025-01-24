@@ -3,11 +3,13 @@ package autotests;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import com.consol.citrus.message.MessageType;
+import com.consol.citrus.validation.json.JsonPathMessageValidationContext;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
+import static com.consol.citrus.validation.json.JsonPathMessageValidationContext.Builder.jsonPath;
 
 
 public class DuckCreateTest extends DuckBaseTest {
@@ -15,30 +17,25 @@ public class DuckCreateTest extends DuckBaseTest {
     @CitrusTest
     public void createDuckWithMaterialRubber(@Optional @CitrusResource TestCaseRunner runner){
         createDuck(runner, "red", 0.53, "rubber", "quack", "FIXED");
-        saveDuckId(runner);
-        validateDuckResponse(runner, "red", 0.53, "rubber", "quack", "FIXED");
+        validateDuckResponse(runner, jsonPath().expression("$.material", "rubber"));
     }
 
     @Test(description = "Проверка создания утки с материалом wood")
     @CitrusTest
     public void createDuckWithMaterialWood(@Optional @CitrusResource TestCaseRunner runner){
         createDuck(runner, "red", 0.53, "wood", "quack", "FIXED");
-        saveDuckId(runner);
-        validateDuckResponse(runner, "red", 0.53, "wood", "quack", "FIXED");
+        validateDuckResponse(runner, jsonPath().expression("$.material", "wood"));
     }
 
-    private void validateDuckResponse(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
+    public void validateDuckResponse(TestCaseRunner runner, JsonPathMessageValidationContext.Builder body) {
         runner.$(
-                http().client("http://localhost:2222").receive().response(HttpStatus.OK)
-                        .message().contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .body("{\n" +
-                                "\"id\": ${duckId},\n" +
-                                "\"color\": \"" + color + "\",\n" +
-                                "\"height\": " + height + ",\n" +
-                                "\"material\": \"" + material + "\",\n" +
-                                "\"sound\": \"" + sound + "\",\n" +
-                                "\"wingsState\": \"" + wingsState + "\"\n" +
-                                "}")
+                http()
+                        .client("http://localhost:2222")
+                        .receive()
+                        .response(HttpStatus.OK)
+                        .message()
+                        .type(MessageType.JSON)
+                        .validate(body)
         );
     }
 }

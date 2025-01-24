@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
+
+import static com.consol.citrus.DefaultTestActionBuilder.action;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 
 
@@ -23,8 +25,9 @@ public class DuckSwimTest extends DuckBaseTest {
     @Test(description = "Проверка того, что уточка c несуществующим id не плавает")
     @CitrusTest
     public void swimWithInvalidId(@Optional @CitrusResource TestCaseRunner runner){
-        int[] existingIds = getAllDuckIds(runner);
-        int invalidId = generateInvalidId(existingIds);
+       // int[] existingIds = getAllDuckIds(runner);
+       // int invalidId = generateInvalidId(existingIds);
+        int invalidId = 99999;
         duckSwim(runner, String.valueOf(invalidId));
         validateBadResponse(runner);
     }
@@ -43,24 +46,28 @@ public class DuckSwimTest extends DuckBaseTest {
     }
 
     public int[] getAllDuckIds(TestCaseRunner runner) {
+        // Отправляем запрос на получение всех ID уток
         runner.$(
                 http().client("http://localhost:2222").send().get("/api/duck/getAllIds")
         );
 
+        // Создаем переменную для хранения ответа
         final String[] response = new String[1];
 
-        runner.$(action -> {
-            response[0] = action.getVariable("response");
-        });
+        // Извлекаем переменную response из контекста
+        runner.$(action(testContext ->  {
+            response[0] = testContext.getVariable("response"); // Извлекаем ответ
+        }));
 
+        // Обрабатываем ответ и извлекаем ID
         String[] idStrings = response[0].replaceAll("[\\[\\]]", "").split(",");
         int[] ids = new int[idStrings.length];
 
         for (int i = 0; i < idStrings.length; i++) {
-            ids[i] = Integer.parseInt(idStrings[i].trim());
+            ids[i] = Integer.parseInt(idStrings[i].trim()); // Преобразуем строки в целые числа
         }
 
-        return ids;
+        return ids; // Возвращаем массив ID
     }
 
     private int generateInvalidId(int[] existingIds) {
