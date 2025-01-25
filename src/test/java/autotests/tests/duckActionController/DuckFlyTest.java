@@ -1,14 +1,16 @@
-package autotests;
+package autotests.tests.duckActionController;
 
+
+import autotests.clients.DuckActionsClient;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 
 
-public class DuckFlyTest extends DuckBaseTest {
+
+public class DuckFlyTest extends DuckActionsClient {
 
     @Test (description = "Проверка полета утки с состоянием крыльев ACTIVE")
     @CitrusTest
@@ -35,11 +37,5 @@ public class DuckFlyTest extends DuckBaseTest {
         saveDuckId(runner);
         duckFly(runner, "${duckId}");
         validateResponse(runner, "I can't fly");
-    }
-
-    public void duckFly(TestCaseRunner runner, String id){
-        runner.$(
-                http().client("http://localhost:2222").send().get("/api/duck/action/fly").queryParam("id", id)
-        );
     }
 }

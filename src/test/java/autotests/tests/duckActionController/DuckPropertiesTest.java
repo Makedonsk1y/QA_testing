@@ -1,16 +1,16 @@
-package autotests;
+package autotests.tests.duckActionController;
+
+import autotests.clients.DuckActionsClient;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 import java.util.concurrent.atomic.AtomicInteger;
-import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 
 
-public class DuckPropertiesTest extends DuckBaseTest {
+
+public class DuckPropertiesTest extends DuckActionsClient {
     @Test(description = "Проверка того, что выводятся свойства уточки с четным ID")
     @CitrusTest
     public void successfulPropertiesEvenId(@Optional @CitrusResource TestCaseRunner runner) {
@@ -30,8 +30,7 @@ public class DuckPropertiesTest extends DuckBaseTest {
             });
         } while (id.get() % 2 != 0);
 
-        getDuckProperties(runner, String.valueOf(id.get()));
-        validateDuckProperties(runner, duckColor, duckHeight, duckMaterial, duckSound, duckWingsState);
+        getDuckProperties(runner, String.valueOf(id.get()), duckColor, duckHeight, duckMaterial, duckSound, duckWingsState);
     }
 
     @Test(description = "Проверка того, что выводятся свойства уточки с нечетным id")
@@ -53,27 +52,6 @@ public class DuckPropertiesTest extends DuckBaseTest {
             });
         } while (id.get() % 2 == 0);
 
-        getDuckProperties(runner, String.valueOf(id.get()));
-        validateDuckProperties(runner, duckColor, duckHeight, duckMaterial, duckSound, duckWingsState);
-    }
-
-    public void getDuckProperties(TestCaseRunner runner, String id){
-        runner.$(
-                http().client("http://localhost:2222").send().get("/api/duck/action/properties").queryParam("id", id)
-        );
-    }
-
-    public void validateDuckProperties(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState){
-        runner.$(
-                http().client("http://localhost:2222").receive().response(HttpStatus.OK)
-                        .message().contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .body("{\n" +
-                                "\"color\": \"" + color + "\",\n" +
-                                "\"height\": " + height + ",\n" +
-                                "\"material\": \"" + material + "\",\n" +
-                                "\"sound\": \"" + sound + "\",\n" +
-                                "\"wingsState\": \"" + wingsState + "\"\n" +
-                                "}")
-        );
+        getDuckProperties(runner, String.valueOf(id.get()), duckColor, duckHeight, duckMaterial, duckSound, duckWingsState);
     }
 }

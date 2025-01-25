@@ -128,20 +128,6 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
         );
     }
 
-    public void validateDuckProperties(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState){
-        runner.$(
-                http().client(duckService).receive().response(HttpStatus.OK)
-                        .message().contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .body("{\n" +
-                                "\"color\": \"" + color + "\",\n" +
-                                "\"height\": " + height + ",\n" +
-                                "\"material\": \"" + material + "\",\n" +
-                                "\"sound\": \"" + sound + "\",\n" +
-                                "\"wingsState\": \"" + wingsState + "\"\n" +
-                                "}")
-        );
-    }
-
     public void validateResponse(TestCaseRunner runner, String expectedMessage){
         runner.$(
                 http().client(duckService).receive().response(HttpStatus.OK)
@@ -168,6 +154,16 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                         .response(HttpStatus.OK)
                         .message()
                         .extract(fromBody().expression("$.id", "duckId"))
+        );
+    }
+
+    public void checkDuckDeleted(TestCaseRunner runner, String duckId) {
+        runner.$(
+                http().client("http://localhost:2222").send().get("/api/duck/action/properties").queryParam("id", duckId)
+        );
+
+        runner.$(
+                http().client("http://localhost:2222").receive().response(HttpStatus.INTERNAL_SERVER_ERROR)
         );
     }
 
