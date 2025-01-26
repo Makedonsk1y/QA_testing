@@ -4,8 +4,12 @@ import autotests.EndpointConfig;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.http.client.HttpClient;
 import com.consol.citrus.message.MessageType;
+import com.consol.citrus.message.builder.ObjectMappingPayloadBuilder;
 import com.consol.citrus.testng.spring.TestNGCitrusSpringSupport;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
@@ -37,6 +41,29 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                                 "\"wingsState\": \"" + wingsState + "\"\n" + "}"));
     }
 
+    public void createDuck(TestCaseRunner runner, Object body){
+        runner.$(
+                http()
+                        .client(duckService)
+                        .send()
+                        .post("/api/duck/create")
+                        .message()
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .body(new ObjectMappingPayloadBuilder(body, new ObjectMapper())));
+    }
+
+    public void createDuck(TestCaseRunner runner, String expectedPayload){
+        runner.$(
+                http()
+                        .client(duckService)
+                        .send()
+                        .post("/api/duck/create")
+                        .message()
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .body(new ClassPathResource(expectedPayload))
+        );
+    }
+
     public void updateDuck(TestCaseRunner runner, String duckId, String color, double height, String material, String sound, String wingsState) {
         runner.$(
                 http().client(duckService).send().put("/api/duck/update")
@@ -49,6 +76,7 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
         );
     }
 
+    // String
     public void deleteDuck(TestCaseRunner runner, String duckId) {
         runner.$(
                 http().client(duckService).send().delete("/api/duck/delete").queryParam("id", duckId)
@@ -58,6 +86,32 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 http().client(duckService).receive().response(HttpStatus.OK)
                         .message()
                         .body("{\"message\": \"Duck is deleted\"}")
+        );
+    }
+
+    //Payload folder
+    public void deleteDuck(TestCaseRunner runner, String duckId, Object body){
+        runner.$(
+                http().client(duckService).send().delete("/api/duck/delete").queryParam("id", duckId)
+        );
+
+        runner.$(
+                http().client(duckService).receive().response(HttpStatus.OK)
+                        .message()
+                        .body(new ObjectMappingPayloadBuilder(body, new ObjectMapper()))
+        );
+    }
+
+    //Resource folder
+    public void deleteDuck(TestCaseRunner runner,String duckId, String expectedPayload){
+        runner.$(
+                http().client(duckService).send().delete("/api/duck/delete").queryParam("id", duckId)
+        );
+
+        runner.$(
+                http().client(duckService).receive().response(HttpStatus.OK)
+                        .message()
+                        .body(new ClassPathResource(expectedPayload))
         );
     }
 
@@ -103,6 +157,18 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
         );
     }
 
+    public void getDuckProperties(TestCaseRunner runner, String duckId, String expectedPayload){
+        runner.$(
+                http().client(duckService).send().get("/api/duck/action/properties").queryParam("id", duckId)
+        );
+
+        runner.$(
+                http().client(duckService).receive().response(HttpStatus.OK)
+                        .message().contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .body(new ClassPathResource(expectedPayload))
+        );
+    }
+
     public void duckFly(TestCaseRunner runner, String id){
         runner.$(
                 http().client(duckService).send().get("/api/duck/action/fly").queryParam("id", id)
@@ -110,6 +176,7 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
     }
 
     //Validation
+    //String
     public void validateDuckResponse(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
         runner.$(
                 http()
@@ -128,6 +195,33 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
         );
     }
 
+    //Payload folder
+    public void validateDuckResponse(TestCaseRunner runner, Object body){
+        runner.$(
+                http()
+                        .client(duckService)
+                        .receive()
+                        .response(HttpStatus.OK)
+                        .message()
+                        .type(MessageType.JSON)
+                        .body(new ObjectMappingPayloadBuilder(body, new ObjectMapper()))
+        );
+    }
+
+    //Resource folder
+    public void validateDuckResponse(TestCaseRunner runner, String expectedPayload){
+        runner.$(
+                http()
+                        .client(duckService)
+                        .receive()
+                        .response(HttpStatus.OK)
+                        .message()
+                        .type(MessageType.JSON)
+                        .body(new ClassPathResource(expectedPayload))
+        );
+    }
+
+    //String
     public void validateResponse(TestCaseRunner runner, String expectedMessage){
         runner.$(
                 http().client(duckService).receive().response(HttpStatus.OK)
@@ -135,6 +229,24 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                         .body("{\n" +
                                 "\"message\": \"" + expectedMessage + "\"\n" +
                                 "}")
+        );
+    }
+
+    //Payload folder
+    public void validateResponse(TestCaseRunner runner, Object body){
+        runner.$(
+                http().client(duckService).receive().response(HttpStatus.OK)
+                        .message().contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .body(new ObjectMappingPayloadBuilder(body, new ObjectMapper()))
+        );
+    }
+
+    //Resource folder
+    public void validateResponseWithResource(TestCaseRunner runner, String expectedPayload){
+        runner.$(
+                http().client(duckService).receive().response(HttpStatus.OK)
+                        .message().contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .body(new ClassPathResource(expectedPayload))
         );
     }
 

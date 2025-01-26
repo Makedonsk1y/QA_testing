@@ -1,6 +1,8 @@
 package autotests.tests.duckController;
 
 import autotests.clients.DuckActionsClient;
+import autotests.payloads.Duck;
+import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -13,14 +15,16 @@ public class DuckCreateTest extends DuckActionsClient {
     @Test(description = "Проверка создания утки с материалом rubber")
     @CitrusTest
     public void createDuckWithMaterialRubber(@Optional @CitrusResource TestCaseRunner runner){
-        createDuck(runner, "red", 0.53, "rubber", "quack", "FIXED");
-        validateDuckResponse(runner, "red", 0.53, "rubber", "quack", "FIXED");
+        Duck duck = new Duck().id("@ignore@").color("red").height(0.53).material("rubber").sound("quack").wingsState(WingsState.FIXED);
+        createDuck(runner, duck);
+        validateDuckResponse(runner, duck);
     }
 
     @Test(description = "Проверка создания утки с материалом wood")
     @CitrusTest
     public void createDuckWithMaterialWood(@Optional @CitrusResource TestCaseRunner runner){
-        createDuck(runner, "red", 0.53, "wood", "quack", "FIXED");
-        validateDuckResponse(runner, "red", 0.53, "wood", "quack", "FIXED");
+        Duck duck = new Duck().id("@ignore@").color("red").height(0.53).material("wood").sound("quack").wingsState(WingsState.FIXED);
+        createDuck(runner, duck);
+        validateDuckResponse(runner, "duckController/duckCreate/duckCreateWood.json");
     }
 }
