@@ -1,6 +1,8 @@
 package autotests.tests.duckActionController;
 
 import autotests.clients.DuckActionsClient;
+import autotests.payloads.Duck;
+import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -17,14 +19,15 @@ public class DuckQuackTest extends DuckActionsClient {
 
         AtomicInteger id = new AtomicInteger();
         do {
-            createDuck(runner, "green", 0.50, "plastic", "quack", "ACTIVE");
+            Duck duck = new Duck().id("@ignore@").color("green").height(0.50).material("plastic").sound("quack").wingsState(WingsState.ACTIVE);
+            createDuck(runner, duck);
             saveDuckId(runner);
 
             runner.$(action -> {
                 id.set(Integer.parseInt(action.getVariable("duckId")));
             });
         } while (id.get() % 2 != 0);
-        duckQuack(runner, String.valueOf(id.get()), 2, 3, "quack-quack-quack, quack-quack-quack");
+        duckQuackResources(runner, String.valueOf(id.get()), 2, 3, "duckActionController/duckQuack/duckQuack.json");
     }
 
     @Test (description = "Проверка того, что утки с нечетным id издают звуки")
@@ -33,13 +36,14 @@ public class DuckQuackTest extends DuckActionsClient {
 
         AtomicInteger id = new AtomicInteger();
         do {
-            createDuck(runner, "green", 0.50, "plastic", "quack", "ACTIVE");
+            Duck duck = new Duck().id("@ignore@").color("green").height(0.50).material("plastic").sound("quack").wingsState(WingsState.ACTIVE);
+            createDuck(runner, duck);
             saveDuckId(runner);
 
             runner.$(action -> {
                 id.set(Integer.parseInt(action.getVariable("duckId")));
             });
         } while (id.get() % 2 == 0);
-        duckQuack(runner, String.valueOf(id.get()), 2, 3, "quack-quack-quack, quack-quack-quack");
+        duckQuackResources(runner, String.valueOf(id.get()), 2, 3, "duckActionController/duckQuack/duckQuack.json");
     }
 }

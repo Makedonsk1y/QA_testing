@@ -139,6 +139,21 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
         );
     }
 
+    public void duckQuackResources(TestCaseRunner runner, String duckId, int repetitionCount, int soundCount, String expectedPayload){
+        runner.$(
+                http().client(duckService).send().get("/api/duck/action/quack")
+                        .queryParam("id", duckId)
+                        .queryParam("repetitionCount", String.valueOf(repetitionCount))
+                        .queryParam("soundCount", String.valueOf(soundCount))
+        );
+
+        runner.$(
+                http().client(duckService).receive().response(HttpStatus.OK)
+                        .message().contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .body(new ClassPathResource(expectedPayload))
+        );
+    }
+
     public void getDuckProperties(TestCaseRunner runner, String duckId, String expectedColor, double expectedHeight, String expectedMaterial, String expectedSound, String expectedWingsState) {
         runner.$(
                 http().client(duckService).send().get("/api/duck/action/properties").queryParam("id", duckId)

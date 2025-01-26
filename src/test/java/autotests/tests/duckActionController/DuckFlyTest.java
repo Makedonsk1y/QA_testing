@@ -2,6 +2,8 @@ package autotests.tests.duckActionController;
 
 
 import autotests.clients.DuckActionsClient;
+import autotests.payloads.Duck;
+import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -15,27 +17,30 @@ public class DuckFlyTest extends DuckActionsClient {
     @Test (description = "Проверка полета утки с состоянием крыльев ACTIVE")
     @CitrusTest
     public void successfulFlyWithActiveWingsState(@Optional @CitrusResource TestCaseRunner runner){
-        createDuck(runner, "red", 0.53, "metal", "quack", "ACTIVE");
+        Duck duck = new Duck().id("@ignore").color("red").height(0.53).material("metal").sound("quack").wingsState(WingsState.ACTIVE);
+        createDuck(runner, duck);
         saveDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponse(runner, "I'm flying");
+        validateResponseWithResource(runner, "duckActionController/duckFly/duckFlyActiveWings.json");
     }
 
     @Test (description = "Проверка полета утки с состоянием крыльев FIXED")
     @CitrusTest
     public void successfulFlyWithFixedWingsState(@Optional @CitrusResource TestCaseRunner runner){
-        createDuck(runner, "red", 0.53, "metal", "quack", "FIXED");
+        Duck duck = new Duck().id("@ignore@").color("red").height(0.53).material("metal").sound("quack").wingsState(WingsState.FIXED);
+        createDuck(runner, duck);
         saveDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponse(runner, "I can't fly");
+        validateResponseWithResource(runner, "duckActionController/duckFly/duckFlyFixedWings.json");
     }
 
     @Test (description = "Проверка полета утки с состоянием крыльев UNDEFINED")
     @CitrusTest
     public void successfulFlyWithUndefinedWingsState(@Optional @CitrusResource TestCaseRunner runner){
-        createDuck(runner, "red", 0.53, "metal", "quack", "FIXED");
+        Duck duck = new Duck().id("@ignore@").color("red").height(0.53).material("metal").sound("quack").wingsState(WingsState.UNDEFINED);
+        createDuck(runner, duck);
         saveDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponse(runner, "Wings are not detected");
+        validateResponseWithResource(runner, "duckActionController/duckFly/duckFlyUndefinedWings.json");
     }
 }

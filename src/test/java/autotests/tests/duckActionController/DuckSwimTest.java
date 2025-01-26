@@ -1,6 +1,9 @@
 package autotests.tests.duckActionController;
 
 import autotests.clients.DuckActionsClient;
+import autotests.payloads.Duck;
+import autotests.payloads.Message;
+import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -13,16 +16,19 @@ public class DuckSwimTest extends DuckActionsClient {
     @Test(description = "Проверка того, что уточка c корректным id поплыла")
     @CitrusTest
     public void successfulSwim(@Optional @CitrusResource TestCaseRunner runner){
-        createDuck(runner, "red", 0.43, "wood", "quack", "ACTIVE");
+        Duck duck = new Duck().id("@ignore@").color("red").height(0.43).material("wood").sound("quack").wingsState(WingsState.ACTIVE);
+        createDuck(runner, duck);
         saveDuckId(runner);
         duckSwim(runner, "${duckId}");
-        validateResponse(runner, "I'm swimming");
+        Message message = new Message().message("I'm swimming");
+        validateResponse(runner, message);
     }
 
     @Test(description = "Проверка, плавает ли уточка с несуществующим id")
     @CitrusTest
     public void swimWithInvalidId(@Optional @CitrusResource TestCaseRunner runner){
-        createDuck(runner, "red", 0.43, "wood", "quack", "ACTIVE");
+        Duck duck = new Duck().id("@ignore@").color("red").height(0.43).material("wood").sound("quack").wingsState(WingsState.ACTIVE);
+        createDuck(runner, duck);
         saveDuckId(runner);
         deleteDuck(runner, "${duckId}");
         duckSwim(runner, "${duckId}");
