@@ -36,6 +36,6 @@ public class DuckFlyTest extends DuckActionsClient {
         createDuck(runner, "red", 0.53, "metal", "quack", "FIXED");
         saveDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponse(runner, "I can't fly");
+        validateResponse(runner, "Wings are not detected");
     }
 }
