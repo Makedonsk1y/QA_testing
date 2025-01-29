@@ -2,6 +2,7 @@ package autotests.tests.duckActionController;
 
 import autotests.clients.DuckActionsClient;
 import autotests.payloads.Duck;
+import autotests.payloads.Sound;
 import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
@@ -19,7 +20,7 @@ public class DuckQuackTest extends DuckActionsClient {
 
         AtomicInteger id = new AtomicInteger();
         do {
-            Duck duck = new Duck().id("@ignore@").color("green").height(0.50).material("plastic").sound("quack").wingsState(WingsState.ACTIVE);
+            Duck duck = new Duck().color("green").height(0.50).material("plastic").sound("quack").wingsState(WingsState.ACTIVE);
             createDuck(runner, duck);
             saveDuckId(runner);
 
@@ -27,7 +28,8 @@ public class DuckQuackTest extends DuckActionsClient {
                 id.set(Integer.parseInt(action.getVariable("duckId")));
             });
         } while (id.get() % 2 != 0);
-        duckQuackResources(runner, String.valueOf(id.get()), 2, 3, "duckActionController/duckQuack/duckQuack.json");
+        duckQuack(runner, 2, 3);
+        validateResponseWithResource(runner,"duckActionController/duckQuack/duckQuack.json");
     }
 
     @Test (description = "Проверка того, что утки с нечетным id издают звуки")
@@ -36,7 +38,7 @@ public class DuckQuackTest extends DuckActionsClient {
 
         AtomicInteger id = new AtomicInteger();
         do {
-            Duck duck = new Duck().id("@ignore@").color("green").height(0.50).material("plastic").sound("quack").wingsState(WingsState.ACTIVE);
+            Duck duck = new Duck().color("green").height(0.50).material("plastic").sound("quack").wingsState(WingsState.ACTIVE);
             createDuck(runner, duck);
             saveDuckId(runner);
 
@@ -44,6 +46,8 @@ public class DuckQuackTest extends DuckActionsClient {
                 id.set(Integer.parseInt(action.getVariable("duckId")));
             });
         } while (id.get() % 2 == 0);
-        duckQuackResources(runner, String.valueOf(id.get()), 2, 3, "duckActionController/duckQuack/duckQuack.json");
+        Sound sound = new Sound().sound("quack-quack-quack, quack-quack-quack");
+        duckQuack(runner, 2, 3);
+        validateResponse(runner, sound);
     }
 }

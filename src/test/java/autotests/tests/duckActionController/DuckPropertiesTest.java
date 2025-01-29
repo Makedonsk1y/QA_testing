@@ -2,6 +2,7 @@ package autotests.tests.duckActionController;
 
 import autotests.clients.DuckActionsClient;
 import autotests.payloads.Duck;
+import autotests.payloads.Properties;
 import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
@@ -18,7 +19,7 @@ public class DuckPropertiesTest extends DuckActionsClient {
     public void successfulPropertiesEvenId(@Optional @CitrusResource TestCaseRunner runner) {
         AtomicInteger id = new AtomicInteger();
         do {
-            Duck duck = new Duck().id("@ignore@").color("red").height(0.53).material("metal").sound("quack").wingsState(WingsState.FIXED);
+            Duck duck = new Duck().color("red").height(0.53).material("metal").sound("quack").wingsState(WingsState.FIXED);
             createDuck(runner, duck);
             saveDuckId(runner);
 
@@ -27,7 +28,8 @@ public class DuckPropertiesTest extends DuckActionsClient {
             });
         } while (id.get() % 2 != 0);
 
-        getDuckProperties(runner, String.valueOf(id.get()), "duckActionController/duckGetProperties/duckPropertiesEvenId.json");
+        getDuckProperties(runner);
+        validateDuckResponse(runner, "duckActionController/duckGetProperties/duckPropertiesEvenId.json");
     }
 
     @Test(description = "Проверка того, что выводятся свойства уточки с нечетным id")
@@ -36,7 +38,7 @@ public class DuckPropertiesTest extends DuckActionsClient {
 
         AtomicInteger id = new AtomicInteger();
         do {
-            Duck duck = new Duck().id("@ignore@").color("green").height(0.60).material("plastic").sound("squeak").wingsState(WingsState.ACTIVE);
+            Duck duck = new Duck().color("green").height(0.60).material("plastic").sound("squeak").wingsState(WingsState.ACTIVE);
             createDuck(runner, duck);
             saveDuckId(runner);
 
@@ -45,6 +47,8 @@ public class DuckPropertiesTest extends DuckActionsClient {
             });
         } while (id.get() % 2 == 0);
 
-        getDuckProperties(runner, String.valueOf(id.get()), "duckActionController/duckGetProperties/duckPropertiesOddId.json");
+        Properties properties = new Properties().color("green").height(0.60).material("plastic").sound("squeak").wingsState(WingsState.ACTIVE);
+        getDuckProperties(runner);
+        validateDuckResponse(runner, properties);
     }
 }

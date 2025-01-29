@@ -10,9 +10,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Accessors(fluent = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Duck {
-    @JsonProperty
-    private int id;
+public class Properties {
     @JsonProperty
     private String color;
     @JsonProperty

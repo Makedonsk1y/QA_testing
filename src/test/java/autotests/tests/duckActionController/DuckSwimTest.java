@@ -16,10 +16,10 @@ public class DuckSwimTest extends DuckActionsClient {
     @Test(description = "Проверка того, что уточка c корректным id поплыла")
     @CitrusTest
     public void successfulSwim(@Optional @CitrusResource TestCaseRunner runner){
-        Duck duck = new Duck().id("@ignore@").color("red").height(0.43).material("wood").sound("quack").wingsState(WingsState.ACTIVE);
+        Duck duck = new Duck().color("red").height(0.43).material("wood").sound("quack").wingsState(WingsState.ACTIVE);
         createDuck(runner, duck);
         saveDuckId(runner);
-        duckSwim(runner, "${duckId}");
+        duckSwim(runner);
         Message message = new Message().message("I'm swimming");
         validateResponse(runner, message);
     }
@@ -27,11 +27,11 @@ public class DuckSwimTest extends DuckActionsClient {
     @Test(description = "Проверка, плавает ли уточка с несуществующим id")
     @CitrusTest
     public void swimWithInvalidId(@Optional @CitrusResource TestCaseRunner runner){
-        Duck duck = new Duck().id("@ignore@").color("red").height(0.43).material("wood").sound("quack").wingsState(WingsState.ACTIVE);
+        Duck duck = new Duck().color("red").height(0.43).material("wood").sound("quack").wingsState(WingsState.ACTIVE);
         createDuck(runner, duck);
         saveDuckId(runner);
-        deleteDuck(runner, "${duckId}");
-        duckSwim(runner, "${duckId}");
+        deleteDuck(runner);
+        duckSwim(runner);
         validateBadResponse(runner);
     }
 }
