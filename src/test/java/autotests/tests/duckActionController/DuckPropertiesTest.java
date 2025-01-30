@@ -7,12 +7,15 @@ import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
 import static com.consol.citrus.container.FinallySequence.Builder.doFinally;
 
-
+@Epic("Duck Action Controller")
+@Feature("Duck Get Properties /api/duck/action/properties")
 public class DuckPropertiesTest extends DuckActionsClient {
     @Test(description = "Проверка того, что выводятся свойства уточки с четным ID")
     @CitrusTest

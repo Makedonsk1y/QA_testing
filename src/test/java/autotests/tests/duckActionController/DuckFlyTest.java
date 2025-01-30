@@ -7,12 +7,15 @@ import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
 import static com.consol.citrus.container.FinallySequence.Builder.doFinally;
 
-
+@Epic("Duck Action Controller")
+@Feature("Duck Fly /api/duck/action/fly")
 public class DuckFlyTest extends DuckActionsClient {
 
     @Test (description = "Проверка полета утки с состоянием крыльев ACTIVE")
