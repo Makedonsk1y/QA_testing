@@ -39,8 +39,8 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
         );
     }
 
-    public void deleteDuckDb(TestCaseRunner runner, String id){
-        runner.$(
+    public ExecuteSQLAction deleteDuckDb(TestCaseRunner runner, String id){
+        return runner.$(
                 sql(testDb).statement("DELETE FROM DUCK WHERE ID=" + id)
         );
     }
