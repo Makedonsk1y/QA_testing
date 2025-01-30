@@ -15,9 +15,9 @@ public class DuckDeleteTest extends DuckActionsClient {
     @Test(description = "Проверка удаления утки")
     @CitrusTest
     public void successfulDeleteDuck(@Optional @CitrusResource TestCaseRunner runner){
+        runner.variable("duckId", "1234567");
         Duck duck = new Duck().color("red").height(0.53).material("rubber").sound("quack").wingsState(WingsState.ACTIVE);
-        createDuck(runner, duck);
-        saveDuckId(runner);
+        insertDuckDb(runner, duck.color(),String.valueOf(duck.height()), duck.material(), duck.sound(), duck.wingsState().toString());
         Message message = new Message().message("Duck is deleted");
         deleteDuck(runner);
         validateResponse(runner, message);

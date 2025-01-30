@@ -2,6 +2,7 @@ package autotests.clients;
 
 import autotests.EndpointConfig;
 import com.consol.citrus.TestCaseRunner;
+import com.consol.citrus.actions.ExecuteSQLAction;
 import com.consol.citrus.http.client.HttpClient;
 import com.consol.citrus.message.MessageType;
 import com.consol.citrus.message.builder.ObjectMappingPayloadBuilder;
@@ -14,6 +15,8 @@ import org.springframework.http.MediaType;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import org.springframework.test.context.ContextConfiguration;
 
+import static com.consol.citrus.actions.ExecuteSQLAction.Builder.sql;
+import static com.consol.citrus.actions.ExecuteSQLQueryAction.Builder.query;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 import static com.consol.citrus.validation.DelegatingPayloadVariableExtractor.Builder.fromBody;
 import static com.consol.citrus.validation.json.JsonMessageValidationContext.Builder.json;
@@ -27,6 +30,36 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
 
     @Autowired
     protected SingleConnectionDataSource testDb;
+
+    //DB methods
+
+    public void databaseUpdate(TestCaseRunner runner, String sql){
+        runner.$(
+         sql(testDb).statement(sql)
+        );
+    }
+
+    public void deleteDuckDb(TestCaseRunner runner, String id){
+        runner.$(
+                sql(testDb).statement("DELETE FROM DUCK WHERE ID=" + id)
+        );
+    }
+
+    public void validateDuckDb(TestCaseRunner runner, String id, String color, String height, String material, String sound, String wingsState) {
+        runner.$(query(testDb).statement("SELECT * FROM DUCK WHERE ID=" + id)
+                .validate("COLOR",color)
+                .validate("HEIGHT",height)
+                .validate("MATERIAL",material)
+                .validate("SOUND",sound)
+                .validate("WINGS_STATE",wingsState));
+    }
+
+    public void insertDuckDb(TestCaseRunner runner, String color, String height, String material, String sound, String wingsState) {
+        String query = "insert into DUCK (id, color, height, material, sound, wings_state) " +
+                "values (${duckId}, '" + color + "', " + height + ", '" + material + "', '" + sound + "', '" + wingsState + "');";
+
+        databaseUpdate(runner, query);
+    }
 
     //CRUD
     //String
