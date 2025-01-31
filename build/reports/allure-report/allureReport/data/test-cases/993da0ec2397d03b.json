@@ -1,0 +1,303 @@
+{
+  "uid" : "993da0ec2397d03b",
+  "name" : "Проверка создания утки с материалом wood",
+  "fullName" : "autotests.tests.duckController.DuckCreateTest.createDuckWithMaterialWood",
+  "historyId" : "c3583f4e52b77c27982c1318c9e93396",
+  "time" : {
+    "start" : 1738335079415,
+    "stop" : 1738335079437,
+    "duration" : 22
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "springTestContextBeforeTestClass",
+    "time" : {
+      "start" : 1738335079284,
+      "stop" : 1738335079285,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "springTestContextPrepareTestInstance",
+    "time" : {
+      "start" : 1738335079285,
+      "stop" : 1738335079286,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "before",
+    "time" : {
+      "start" : 1738335079287,
+      "stop" : 1738335079287,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "springTestContextBeforeTestMethod",
+    "time" : {
+      "start" : 1738335079409,
+      "stop" : 1738335079409,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeSuite",
+    "time" : {
+      "start" : 1738335077293,
+      "stop" : 1738335078365,
+      "duration" : 1072
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Create duck endpoint",
+      "time" : {
+        "start" : 1738335079417,
+        "stop" : 1738335079429,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@793a3286"
+      }, {
+        "name" : "body",
+        "value" : "autotests.payloads.Duck@630df358"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Validate duck DB",
+      "time" : {
+        "start" : 1738335079433,
+        "stop" : 1738335079435,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@793a3286"
+      }, {
+        "name" : "id",
+        "value" : "${duckId}"
+      }, {
+        "name" : "color",
+        "value" : "red"
+      }, {
+        "name" : "height",
+        "value" : "0.53"
+      }, {
+        "name" : "material",
+        "value" : "wood"
+      }, {
+        "name" : "sound",
+        "value" : "quack"
+      }, {
+        "name" : "wingsState",
+        "value" : "FIXED"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Delete duck from DB",
+      "time" : {
+        "start" : 1738335079435,
+        "stop" : 1738335079436,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@793a3286"
+      }, {
+        "name" : "id",
+        "value" : "${duckId}"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "after",
+    "time" : {
+      "start" : 1738335079441,
+      "stop" : 1738335079441,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "springTestContextAfterTestClass",
+    "time" : {
+      "start" : 1738335079441,
+      "stop" : 1738335079442,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "springTestContextAfterTestMethod",
+    "time" : {
+      "start" : 1738335079439,
+      "stop" : 1738335079439,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "afterSuite",
+    "time" : {
+      "start" : 1738335079543,
+      "stop" : 1738335079594,
+      "duration" : 51
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "autotests.tests.duckController.DuckCreateTest"
+  }, {
+    "name" : "testClass",
+    "value" : "autotests.tests.duckController.DuckCreateTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "createDuckWithMaterialWood"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Gradle suite"
+  }, {
+    "name" : "suite",
+    "value" : "Gradle test"
+  }, {
+    "name" : "subSuite",
+    "value" : "autotests.tests.duckController.DuckCreateTest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-HCFPEAN"
+  }, {
+    "name" : "thread",
+    "value" : "10432@DESKTOP-HCFPEAN.TestNG-test=Gradle test-1(29)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "feature",
+    "value" : "Duck create /api/duck/create"
+  }, {
+    "name" : "epic",
+    "value" : "Duck Controller"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "null"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "993da0ec2397d03b.json",
+  "parameterValues" : [ "null" ]
+}

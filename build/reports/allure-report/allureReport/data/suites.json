@@ -1,0 +1,223 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Gradle suite",
+    "children" : [ {
+      "name" : "Gradle test",
+      "children" : [ {
+        "name" : "autotests.tests.duckActionController.DuckQuackTest",
+        "children" : [ {
+          "name" : "Проверка того, что утки с четным id издают звуки",
+          "uid" : "646e3cf6369fa12f",
+          "parentUid" : "715d94bfb7dad5b28bcf52f9202bf5ea",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335078592,
+            "stop" : 1738335079221,
+            "duration" : 629
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "Проверка того, что утки с нечетным id издают звуки",
+          "uid" : "57bb9f434c40ba4f",
+          "parentUid" : "715d94bfb7dad5b28bcf52f9202bf5ea",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079236,
+            "stop" : 1738335079280,
+            "duration" : 44
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "715d94bfb7dad5b28bcf52f9202bf5ea"
+      }, {
+        "name" : "autotests.tests.duckActionController.DuckPropertiesTest",
+        "children" : [ {
+          "name" : "Проверка того, что выводятся свойства уточки с четным ID",
+          "uid" : "a04dba0575094a6d",
+          "parentUid" : "1b3a9abb8c0e2f43740acd68941761b3",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335078592,
+            "stop" : 1738335079023,
+            "duration" : 431
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "Проверка того, что выводятся свойства уточки с нечетным id",
+          "uid" : "9799adbe77c889d8",
+          "parentUid" : "1b3a9abb8c0e2f43740acd68941761b3",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079055,
+            "stop" : 1738335079220,
+            "duration" : 165
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "1b3a9abb8c0e2f43740acd68941761b3"
+      }, {
+        "name" : "autotests.tests.duckActionController.DuckFlyTest",
+        "children" : [ {
+          "name" : "Проверка полета утки с состоянием крыльев ACTIVE",
+          "uid" : "6f225fa415ceb7a1",
+          "parentUid" : "fd3d6079208e0aa56c232a08ae64145c",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335078592,
+            "stop" : 1738335079023,
+            "duration" : 431
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "Проверка полета утки с состоянием крыльев FIXED",
+          "uid" : "885c649b7802f3bf",
+          "parentUid" : "fd3d6079208e0aa56c232a08ae64145c",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079055,
+            "stop" : 1738335079219,
+            "duration" : 164
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "Проверка полета утки с состоянием крыльев UNDEFINED",
+          "uid" : "f7d39c714207aaf8",
+          "parentUid" : "fd3d6079208e0aa56c232a08ae64145c",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079236,
+            "stop" : 1738335079276,
+            "duration" : 40
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "fd3d6079208e0aa56c232a08ae64145c"
+      }, {
+        "name" : "autotests.tests.duckActionController.DuckSwimTest",
+        "children" : [ {
+          "name" : "Проверка того, что уточка c корректным id поплыла",
+          "uid" : "1dc508954d61bb9e",
+          "parentUid" : "8810729748f5a1616d71bda1eea01385",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079244,
+            "stop" : 1738335079286,
+            "duration" : 42
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "Проверка, плавает ли уточка с несуществующим id",
+          "uid" : "c3c62d7c1c6587a5",
+          "parentUid" : "8810729748f5a1616d71bda1eea01385",
+          "status" : "passed",
+          "time" : {
+            "start" : 1738335079300,
+            "stop" : 1738335079343,
+            "duration" : 43
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "8810729748f5a1616d71bda1eea01385"
+      }, {
+        "name" : "autotests.tests.duckController.DuckCreateTest",
+        "children" : [ {
+          "name" : "Проверка создания утки с материалом rubber",
+          "uid" : "9e5bcf63fddabc41",
+          "parentUid" : "e320d9201b913ed91b31327d5c77c9fa",
+          "status" : "passed",
+          "time" : {
+            "start" : 1738335079292,
+            "stop" : 1738335079404,
+            "duration" : 112
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "Проверка создания утки с материалом wood",
+          "uid" : "993da0ec2397d03b",
+          "parentUid" : "e320d9201b913ed91b31327d5c77c9fa",
+          "status" : "passed",
+          "time" : {
+            "start" : 1738335079415,
+            "stop" : 1738335079437,
+            "duration" : 22
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "e320d9201b913ed91b31327d5c77c9fa"
+      }, {
+        "name" : "autotests.tests.duckController.DuckDeleteTest",
+        "children" : [ {
+          "name" : "Проверка удаления утки",
+          "uid" : "33e8e7468502f49e",
+          "parentUid" : "7674ca29be645abb7951ba8fccd2c1ab",
+          "status" : "passed",
+          "time" : {
+            "start" : 1738335079300,
+            "stop" : 1738335079374,
+            "duration" : 74
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "7674ca29be645abb7951ba8fccd2c1ab"
+      }, {
+        "name" : "autotests.tests.duckController.DuckUpdateTest",
+        "children" : [ {
+          "name" : "Проверка обновления цвета и высоты утки",
+          "uid" : "d4695b13319a00f8",
+          "parentUid" : "760efb203451ba8f168848bd6f028d21",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079361,
+            "stop" : 1738335079400,
+            "duration" : 39
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "Проверка обновления цвета и звука утки",
+          "uid" : "18e57d1bef573e80",
+          "parentUid" : "760efb203451ba8f168848bd6f028d21",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079410,
+            "stop" : 1738335079443,
+            "duration" : 33
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "760efb203451ba8f168848bd6f028d21"
+      } ],
+      "uid" : "6edf7b6d6ec097775c478f55491c2a49"
+    } ],
+    "uid" : "350742de9190af4e6a560acc7ec0396c"
+  } ]
+}

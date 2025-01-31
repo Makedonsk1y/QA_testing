@@ -1,0 +1,141 @@
+[ {
+  "uid" : "18e57d1bef573e80",
+  "name" : "Проверка обновления цвета и звука утки",
+  "time" : {
+    "start" : 1738335079410,
+    "stop" : 1738335079443,
+    "duration" : 33
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "f7d39c714207aaf8",
+  "name" : "Проверка полета утки с состоянием крыльев UNDEFINED",
+  "time" : {
+    "start" : 1738335079236,
+    "stop" : 1738335079276,
+    "duration" : 40
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9e5bcf63fddabc41",
+  "name" : "Проверка создания утки с материалом rubber",
+  "time" : {
+    "start" : 1738335079292,
+    "stop" : 1738335079404,
+    "duration" : 112
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "33e8e7468502f49e",
+  "name" : "Проверка удаления утки",
+  "time" : {
+    "start" : 1738335079300,
+    "stop" : 1738335079374,
+    "duration" : 74
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "646e3cf6369fa12f",
+  "name" : "Проверка того, что утки с четным id издают звуки",
+  "time" : {
+    "start" : 1738335078592,
+    "stop" : 1738335079221,
+    "duration" : 629
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "d4695b13319a00f8",
+  "name" : "Проверка обновления цвета и высоты утки",
+  "time" : {
+    "start" : 1738335079361,
+    "stop" : 1738335079400,
+    "duration" : 39
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "a04dba0575094a6d",
+  "name" : "Проверка того, что выводятся свойства уточки с четным ID",
+  "time" : {
+    "start" : 1738335078592,
+    "stop" : 1738335079023,
+    "duration" : 431
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9799adbe77c889d8",
+  "name" : "Проверка того, что выводятся свойства уточки с нечетным id",
+  "time" : {
+    "start" : 1738335079055,
+    "stop" : 1738335079220,
+    "duration" : 165
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "c3c62d7c1c6587a5",
+  "name" : "Проверка, плавает ли уточка с несуществующим id",
+  "time" : {
+    "start" : 1738335079300,
+    "stop" : 1738335079343,
+    "duration" : 43
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "885c649b7802f3bf",
+  "name" : "Проверка полета утки с состоянием крыльев FIXED",
+  "time" : {
+    "start" : 1738335079055,
+    "stop" : 1738335079219,
+    "duration" : 164
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "6f225fa415ceb7a1",
+  "name" : "Проверка полета утки с состоянием крыльев ACTIVE",
+  "time" : {
+    "start" : 1738335078592,
+    "stop" : 1738335079023,
+    "duration" : 431
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "1dc508954d61bb9e",
+  "name" : "Проверка того, что уточка c корректным id поплыла",
+  "time" : {
+    "start" : 1738335079244,
+    "stop" : 1738335079286,
+    "duration" : 42
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "993da0ec2397d03b",
+  "name" : "Проверка создания утки с материалом wood",
+  "time" : {
+    "start" : 1738335079415,
+    "stop" : 1738335079437,
+    "duration" : 22
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "57bb9f434c40ba4f",
+  "name" : "Проверка того, что утки с нечетным id издают звуки",
+  "time" : {
+    "start" : 1738335079236,
+    "stop" : 1738335079280,
+    "duration" : 44
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]

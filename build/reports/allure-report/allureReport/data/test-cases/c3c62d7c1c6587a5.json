@@ -1,0 +1,333 @@
+{
+  "uid" : "c3c62d7c1c6587a5",
+  "name" : "Проверка, плавает ли уточка с несуществующим id",
+  "fullName" : "autotests.tests.duckActionController.DuckSwimTest.swimWithInvalidId",
+  "historyId" : "4bd95553ae92c5250f85a9705acaafa4",
+  "time" : {
+    "start" : 1738335079300,
+    "stop" : 1738335079343,
+    "duration" : 43
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "springTestContextBeforeTestMethod",
+    "time" : {
+      "start" : 1738335079293,
+      "stop" : 1738335079293,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "springTestContextBeforeTestClass",
+    "time" : {
+      "start" : 1738335079236,
+      "stop" : 1738335079236,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "springTestContextPrepareTestInstance",
+    "time" : {
+      "start" : 1738335079237,
+      "stop" : 1738335079238,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "before",
+    "time" : {
+      "start" : 1738335079239,
+      "stop" : 1738335079239,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeSuite",
+    "time" : {
+      "start" : 1738335077293,
+      "stop" : 1738335078365,
+      "duration" : 1072
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Delete duck from DB",
+      "time" : {
+        "start" : 1738335079303,
+        "stop" : 1738335079304,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@32295323"
+      }, {
+        "name" : "id",
+        "value" : "${duckId}"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Insert new duck DB",
+      "time" : {
+        "start" : 1738335079304,
+        "stop" : 1738335079307,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@32295323"
+      }, {
+        "name" : "color",
+        "value" : "red"
+      }, {
+        "name" : "height",
+        "value" : "0.43"
+      }, {
+        "name" : "material",
+        "value" : "wood"
+      }, {
+        "name" : "sound",
+        "value" : "quack"
+      }, {
+        "name" : "wingsState",
+        "value" : "ACTIVE"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Delete duck endpoint",
+      "time" : {
+        "start" : 1738335079307,
+        "stop" : 1738335079324,
+        "duration" : 17
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@32295323"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Duck swim endpoint",
+      "time" : {
+        "start" : 1738335079324,
+        "stop" : 1738335079334,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@32295323"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Validate bad response",
+      "time" : {
+        "start" : 1738335079335,
+        "stop" : 1738335079337,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@32295323"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "springTestContextAfterTestMethod",
+    "time" : {
+      "start" : 1738335079347,
+      "stop" : 1738335079348,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "after",
+    "time" : {
+      "start" : 1738335079349,
+      "stop" : 1738335079349,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "springTestContextAfterTestClass",
+    "time" : {
+      "start" : 1738335079350,
+      "stop" : 1738335079350,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "afterSuite",
+    "time" : {
+      "start" : 1738335079543,
+      "stop" : 1738335079594,
+      "duration" : 51
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "autotests.tests.duckActionController.DuckSwimTest"
+  }, {
+    "name" : "testClass",
+    "value" : "autotests.tests.duckActionController.DuckSwimTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "swimWithInvalidId"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Gradle suite"
+  }, {
+    "name" : "suite",
+    "value" : "Gradle test"
+  }, {
+    "name" : "subSuite",
+    "value" : "autotests.tests.duckActionController.DuckSwimTest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-HCFPEAN"
+  }, {
+    "name" : "thread",
+    "value" : "10432@DESKTOP-HCFPEAN.TestNG-test=Gradle test-2(30)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "feature",
+    "value" : "Duck Swim /api/duck/action/swim"
+  }, {
+    "name" : "epic",
+    "value" : "Duck Action Controller"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "null"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c3c62d7c1c6587a5.json",
+  "parameterValues" : [ "null" ]
+}

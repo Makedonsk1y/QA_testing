@@ -1,0 +1,227 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "autotests.tests",
+    "children" : [ {
+      "name" : "duckActionController",
+      "children" : [ {
+        "name" : "DuckQuackTest",
+        "children" : [ {
+          "name" : "successfulQuackWithEvenId",
+          "uid" : "646e3cf6369fa12f",
+          "parentUid" : "4b9567d6c80899fb4a110a71b03a161b",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335078592,
+            "stop" : 1738335079221,
+            "duration" : 629
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "successfulQuackWithOddId",
+          "uid" : "57bb9f434c40ba4f",
+          "parentUid" : "4b9567d6c80899fb4a110a71b03a161b",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079236,
+            "stop" : 1738335079280,
+            "duration" : 44
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "4b9567d6c80899fb4a110a71b03a161b"
+      }, {
+        "name" : "DuckPropertiesTest",
+        "children" : [ {
+          "name" : "successfulPropertiesEvenId",
+          "uid" : "a04dba0575094a6d",
+          "parentUid" : "2207aca24169b404998435f419d884b1",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335078592,
+            "stop" : 1738335079023,
+            "duration" : 431
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "successfulPropertiesOddId",
+          "uid" : "9799adbe77c889d8",
+          "parentUid" : "2207aca24169b404998435f419d884b1",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079055,
+            "stop" : 1738335079220,
+            "duration" : 165
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "2207aca24169b404998435f419d884b1"
+      }, {
+        "name" : "DuckFlyTest",
+        "children" : [ {
+          "name" : "successfulFlyWithActiveWingsState",
+          "uid" : "6f225fa415ceb7a1",
+          "parentUid" : "038b40b54601efdb4588f9bf49680b65",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335078592,
+            "stop" : 1738335079023,
+            "duration" : 431
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "successfulFlyWithFixedWingsState",
+          "uid" : "885c649b7802f3bf",
+          "parentUid" : "038b40b54601efdb4588f9bf49680b65",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079055,
+            "stop" : 1738335079219,
+            "duration" : 164
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "successfulFlyWithUndefinedWingsState",
+          "uid" : "f7d39c714207aaf8",
+          "parentUid" : "038b40b54601efdb4588f9bf49680b65",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079236,
+            "stop" : 1738335079276,
+            "duration" : 40
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "038b40b54601efdb4588f9bf49680b65"
+      }, {
+        "name" : "DuckSwimTest",
+        "children" : [ {
+          "name" : "successfulSwim",
+          "uid" : "1dc508954d61bb9e",
+          "parentUid" : "6dbced4888c05d12e24e580cfc768ea8",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079244,
+            "stop" : 1738335079286,
+            "duration" : 42
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "swimWithInvalidId",
+          "uid" : "c3c62d7c1c6587a5",
+          "parentUid" : "6dbced4888c05d12e24e580cfc768ea8",
+          "status" : "passed",
+          "time" : {
+            "start" : 1738335079300,
+            "stop" : 1738335079343,
+            "duration" : 43
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "6dbced4888c05d12e24e580cfc768ea8"
+      } ],
+      "uid" : "ff26296561e503057da5960c33d4cdd6"
+    }, {
+      "name" : "duckController",
+      "children" : [ {
+        "name" : "DuckCreateTest",
+        "children" : [ {
+          "name" : "createDuckWithMaterialRubber",
+          "uid" : "9e5bcf63fddabc41",
+          "parentUid" : "42aa4cd122d3a1293f417a720d3b9240",
+          "status" : "passed",
+          "time" : {
+            "start" : 1738335079292,
+            "stop" : 1738335079404,
+            "duration" : 112
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "createDuckWithMaterialWood",
+          "uid" : "993da0ec2397d03b",
+          "parentUid" : "42aa4cd122d3a1293f417a720d3b9240",
+          "status" : "passed",
+          "time" : {
+            "start" : 1738335079415,
+            "stop" : 1738335079437,
+            "duration" : 22
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "42aa4cd122d3a1293f417a720d3b9240"
+      }, {
+        "name" : "DuckDeleteTest",
+        "children" : [ {
+          "name" : "successfulDeleteDuck",
+          "uid" : "33e8e7468502f49e",
+          "parentUid" : "930e99067c3e83daafc1ee498d662242",
+          "status" : "passed",
+          "time" : {
+            "start" : 1738335079300,
+            "stop" : 1738335079374,
+            "duration" : 74
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "930e99067c3e83daafc1ee498d662242"
+      }, {
+        "name" : "DuckUpdateTest",
+        "children" : [ {
+          "name" : "successfulUpdateColorAndHeight",
+          "uid" : "d4695b13319a00f8",
+          "parentUid" : "1782a100568c4093042c2907ab41ee10",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079361,
+            "stop" : 1738335079400,
+            "duration" : 39
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        }, {
+          "name" : "successfulUpdateColorAndSound",
+          "uid" : "18e57d1bef573e80",
+          "parentUid" : "1782a100568c4093042c2907ab41ee10",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738335079410,
+            "stop" : 1738335079443,
+            "duration" : 33
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "null" ]
+        } ],
+        "uid" : "1782a100568c4093042c2907ab41ee10"
+      } ],
+      "uid" : "663d8d8533a876433b8be061563591f9"
+    } ],
+    "uid" : "autotests.tests"
+  } ]
+}

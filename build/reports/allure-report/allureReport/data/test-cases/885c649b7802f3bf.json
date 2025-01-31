@@ -1,0 +1,328 @@
+{
+  "uid" : "885c649b7802f3bf",
+  "name" : "Проверка полета утки с состоянием крыльев FIXED",
+  "fullName" : "autotests.tests.duckActionController.DuckFlyTest.successfulFlyWithFixedWingsState",
+  "historyId" : "bc887c4830b2399921b0b89ca5e65db5",
+  "time" : {
+    "start" : 1738335079055,
+    "stop" : 1738335079219,
+    "duration" : 164
+  },
+  "status" : "broken",
+  "statusMessage" : "Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'",
+  "statusTrace" : "com.consol.citrus.exceptions.TestCaseFailedException: Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'\r\n\tat com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:143)\r\n\tat com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)\r\n\tat com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)\r\n\tat autotests.clients.DuckActionsClient.validateResponseWithResource(DuckActionsClient.java:252)\r\n\tat autotests.tests.duckActionController.DuckFlyTest.successfulFlyWithFixedWingsState(DuckFlyTest.java:44)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)\r\n\tat com.consol.citrus.testng.TestNGHelper.lambda$invokeTestMethod$1(TestNGHelper.java:82)\r\n\tat com.consol.citrus.common.DefaultTestLoader.lambda$doLoad$1(DefaultTestLoader.java:116)\r\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1541)\r\n\tat com.consol.citrus.common.DefaultTestLoader.doLoad(DefaultTestLoader.java:116)\r\n\tat com.consol.citrus.common.DefaultTestLoader.load(DefaultTestLoader.java:94)\r\n\tat com.consol.citrus.testng.TestNGHelper.invokeTestMethod(TestNGHelper.java:83)\r\n\tat com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:185)\r\n\tat com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:101)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:272)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:669)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\r\n\tat java.base/java.lang.Thread.run(Thread.java:829)\r\nCaused by: com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)\r\n\tat com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)\r\n\tat com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)\r\n\tat com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)\r\n\tat com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)\r\n\tat com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)\r\n\t... 28 more\r\nCaused by: java.lang.IllegalArgumentException: Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'\r\n\tat org.springframework.util.Assert.isTrue(Assert.java:121)\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:211)\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)\r\n\t... 34 more\r\n",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "springTestContextBeforeTestClass",
+    "time" : {
+      "start" : 1738335078404,
+      "stop" : 1738335078410,
+      "duration" : 6
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "springTestContextPrepareTestInstance",
+    "time" : {
+      "start" : 1738335078411,
+      "stop" : 1738335078413,
+      "duration" : 2
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "before",
+    "time" : {
+      "start" : 1738335078414,
+      "stop" : 1738335078414,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "springTestContextBeforeTestMethod",
+    "time" : {
+      "start" : 1738335079050,
+      "stop" : 1738335079050,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeSuite",
+    "time" : {
+      "start" : 1738335077293,
+      "stop" : 1738335078365,
+      "duration" : 1072
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'",
+    "statusTrace" : "com.consol.citrus.exceptions.TestCaseFailedException: Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'\r\n\tat com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:143)\r\n\tat com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)\r\n\tat com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)\r\n\tat autotests.clients.DuckActionsClient.validateResponseWithResource(DuckActionsClient.java:252)\r\n\tat autotests.tests.duckActionController.DuckFlyTest.successfulFlyWithFixedWingsState(DuckFlyTest.java:44)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)\r\n\tat com.consol.citrus.testng.TestNGHelper.lambda$invokeTestMethod$1(TestNGHelper.java:82)\r\n\tat com.consol.citrus.common.DefaultTestLoader.lambda$doLoad$1(DefaultTestLoader.java:116)\r\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1541)\r\n\tat com.consol.citrus.common.DefaultTestLoader.doLoad(DefaultTestLoader.java:116)\r\n\tat com.consol.citrus.common.DefaultTestLoader.load(DefaultTestLoader.java:94)\r\n\tat com.consol.citrus.testng.TestNGHelper.invokeTestMethod(TestNGHelper.java:83)\r\n\tat com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:185)\r\n\tat com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:101)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:272)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:669)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\r\n\tat java.base/java.lang.Thread.run(Thread.java:829)\r\nCaused by: com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)\r\n\tat com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)\r\n\tat com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)\r\n\tat com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)\r\n\tat com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)\r\n\tat com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)\r\n\t... 28 more\r\nCaused by: java.lang.IllegalArgumentException: Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'\r\n\tat org.springframework.util.Assert.isTrue(Assert.java:121)\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:211)\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)\r\n\t... 34 more\r\n",
+    "steps" : [ {
+      "name" : "Delete duck from DB",
+      "time" : {
+        "start" : 1738335079060,
+        "stop" : 1738335079063,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@72c9334e"
+      }, {
+        "name" : "id",
+        "value" : "${duckId}"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Insert new duck DB",
+      "time" : {
+        "start" : 1738335079064,
+        "stop" : 1738335079068,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@72c9334e"
+      }, {
+        "name" : "color",
+        "value" : "red"
+      }, {
+        "name" : "height",
+        "value" : "0.53"
+      }, {
+        "name" : "material",
+        "value" : "metal"
+      }, {
+        "name" : "sound",
+        "value" : "quack"
+      }, {
+        "name" : "wingsState",
+        "value" : "FIXED"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Duck fly endpoint",
+      "time" : {
+        "start" : 1738335079068,
+        "stop" : 1738335079084,
+        "duration" : 16
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@72c9334e"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Validate response from resources",
+      "time" : {
+        "start" : 1738335079084,
+        "stop" : 1738335079212,
+        "duration" : 128
+      },
+      "status" : "broken",
+      "statusMessage" : "Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'",
+      "statusTrace" : "com.consol.citrus.exceptions.TestCaseFailedException: Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'\r\n\tat com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:143)\r\n\tat com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)\r\n\tat com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)\r\n\tat autotests.clients.DuckActionsClient.validateResponseWithResource(DuckActionsClient.java:252)\r\n\tat autotests.tests.duckActionController.DuckFlyTest.successfulFlyWithFixedWingsState(DuckFlyTest.java:44)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)\r\n\tat com.consol.citrus.testng.TestNGHelper.lambda$invokeTestMethod$1(TestNGHelper.java:82)\r\n\tat com.consol.citrus.common.DefaultTestLoader.lambda$doLoad$1(DefaultTestLoader.java:116)\r\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1541)\r\n\tat com.consol.citrus.common.DefaultTestLoader.doLoad(DefaultTestLoader.java:116)\r\n\tat com.consol.citrus.common.DefaultTestLoader.load(DefaultTestLoader.java:94)\r\n\tat com.consol.citrus.testng.TestNGHelper.invokeTestMethod(TestNGHelper.java:83)\r\n\tat com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:185)\r\n\tat com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:101)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:272)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:669)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\r\n\tat java.base/java.lang.Thread.run(Thread.java:829)\r\nCaused by: com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)\r\n\tat com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)\r\n\tat com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)\r\n\tat com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)\r\n\tat com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)\r\n\tat com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)\r\n\t... 28 more\r\nCaused by: java.lang.IllegalArgumentException: Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'\r\n\tat org.springframework.util.Assert.isTrue(Assert.java:121)\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:211)\r\n\tat com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)\r\n\t... 34 more\r\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@72c9334e"
+      }, {
+        "name" : "expectedPayload",
+        "value" : "duckActionController/duckFly/duckFlyFixedWings.json"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "springTestContextAfterTestMethod",
+    "time" : {
+      "start" : 1738335079226,
+      "stop" : 1738335079226,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "after",
+    "time" : {
+      "start" : 1738335079282,
+      "stop" : 1738335079283,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "springTestContextAfterTestClass",
+    "time" : {
+      "start" : 1738335079283,
+      "stop" : 1738335079283,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "afterSuite",
+    "time" : {
+      "start" : 1738335079543,
+      "stop" : 1738335079594,
+      "duration" : 51
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "autotests.tests.duckActionController.DuckFlyTest"
+  }, {
+    "name" : "testClass",
+    "value" : "autotests.tests.duckActionController.DuckFlyTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "successfulFlyWithFixedWingsState"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Gradle suite"
+  }, {
+    "name" : "suite",
+    "value" : "Gradle test"
+  }, {
+    "name" : "subSuite",
+    "value" : "autotests.tests.duckActionController.DuckFlyTest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-HCFPEAN"
+  }, {
+    "name" : "thread",
+    "value" : "10432@DESKTOP-HCFPEAN.TestNG-test=Gradle test-1(29)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "epic",
+    "value" : "Duck Action Controller"
+  }, {
+    "name" : "feature",
+    "value" : "Duck Fly /api/duck/action/fly"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "null"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "885c649b7802f3bf.json",
+  "parameterValues" : [ "null" ]
+}

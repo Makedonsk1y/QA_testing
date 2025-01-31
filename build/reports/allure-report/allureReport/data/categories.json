@@ -1,0 +1,175 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "Failed to validate JSON text:\r\n{\"sound\":\"moo-moo, moo-moo, moo-moo\"} Values not equal for entry: 'sound', expected 'quack-quack-quack, quack-quack-quack' but was 'moo-moo, moo-moo, moo-moo'",
+      "children" : [ {
+        "name" : "Проверка того, что утки с четным id издают звуки",
+        "uid" : "646e3cf6369fa12f",
+        "parentUid" : "b8d6204d6464fef67ec530145f36f391",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335078592,
+          "stop" : 1738335079221,
+          "duration" : 629
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "b8d6204d6464fef67ec530145f36f391"
+    }, {
+      "name" : "org.springframework.dao.DuplicateKeyException: StatementCallback; SQL [insert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'FIXED')]; Нарушение уникального индекса или первичного ключа: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"\nUnique index or primary key violation: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"; SQL statement:\ninsert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'FIXED') [23505-196]; nested exception is org.h2.jdbc.JdbcSQLException: Нарушение уникального индекса или первичного ключа: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"\nUnique index or primary key violation: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"; SQL statement:\ninsert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'FIXED') [23505-196]\r\n\tat org.h2.message.DbException.getJdbcSQLException(DbException.java:345)\r\n\tat org.h2.message.DbException.get(DbException.java:179)\r\n\tat org.h2.message.DbException.get(DbException.java:155)\r\n\tat org.h2.mvstore.db.MVPrimaryIndex.add(MVPrimaryIndex.java:139)\r\n\tat org.h2.mvstore.db.MVTable.addRow(MVTable.java:705)\r\n\tat org.h2.command.dml.Insert.insertRows(Insert.java:156)\r\n\tat org.h2.command.dml.Insert.update(Insert.java:114)\r\n\tat org.h2.command.CommandContainer.update(CommandContainer.java:101)\r\n\tat org.h2.command.Command.executeUpdate(Command.java:260)\r\n\tat org.h2.server.TcpServerThread.process(TcpServerThread.java:354)\r\n\tat org.h2.server.TcpServerThread.run(TcpServerThread.java:158)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1575)\r\n",
+      "children" : [ {
+        "name" : "Проверка того, что выводятся свойства уточки с четным ID",
+        "uid" : "a04dba0575094a6d",
+        "parentUid" : "8971b8d9768a59e9ade88592311cf876",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335078592,
+          "stop" : 1738335079023,
+          "duration" : 431
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "8971b8d9768a59e9ade88592311cf876"
+    }, {
+      "name" : "org.springframework.dao.DuplicateKeyException: StatementCallback; SQL [insert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'ACTIVE')]; Нарушение уникального индекса или первичного ключа: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"\nUnique index or primary key violation: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"; SQL statement:\ninsert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'ACTIVE') [23505-196]; nested exception is org.h2.jdbc.JdbcSQLException: Нарушение уникального индекса или первичного ключа: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"\nUnique index or primary key violation: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"; SQL statement:\ninsert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'ACTIVE') [23505-196]\r\n\tat org.h2.message.DbException.getJdbcSQLException(DbException.java:345)\r\n\tat org.h2.message.DbException.get(DbException.java:179)\r\n\tat org.h2.message.DbException.get(DbException.java:155)\r\n\tat org.h2.mvstore.db.MVPrimaryIndex.add(MVPrimaryIndex.java:139)\r\n\tat org.h2.mvstore.db.MVTable.addRow(MVTable.java:705)\r\n\tat org.h2.command.dml.Insert.insertRows(Insert.java:156)\r\n\tat org.h2.command.dml.Insert.update(Insert.java:114)\r\n\tat org.h2.command.CommandContainer.update(CommandContainer.java:101)\r\n\tat org.h2.command.Command.executeUpdate(Command.java:260)\r\n\tat org.h2.server.TcpServerThread.process(TcpServerThread.java:354)\r\n\tat org.h2.server.TcpServerThread.run(TcpServerThread.java:158)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1575)\r\n",
+      "children" : [ {
+        "name" : "Проверка полета утки с состоянием крыльев ACTIVE",
+        "uid" : "6f225fa415ceb7a1",
+        "parentUid" : "a0b4a3f6be3a19bcfe6fd1131c32d008",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335078592,
+          "stop" : 1738335079023,
+          "duration" : 431
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "a0b4a3f6be3a19bcfe6fd1131c32d008"
+    }, {
+      "name" : "Failed to validate JSON text:\r\n{} Number of JSON entries not equal for element: '$.', expected '5' but was '0'",
+      "children" : [ {
+        "name" : "Проверка того, что выводятся свойства уточки с нечетным id",
+        "uid" : "9799adbe77c889d8",
+        "parentUid" : "2ffe9c4a075bf6cc3ff8c8e212023995",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079055,
+          "stop" : 1738335079220,
+          "duration" : 165
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка обновления цвета и звука утки",
+        "uid" : "18e57d1bef573e80",
+        "parentUid" : "2ffe9c4a075bf6cc3ff8c8e212023995",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079410,
+          "stop" : 1738335079443,
+          "duration" : 33
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "2ffe9c4a075bf6cc3ff8c8e212023995"
+    }, {
+      "name" : "Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'",
+      "children" : [ {
+        "name" : "Проверка полета утки с состоянием крыльев FIXED",
+        "uid" : "885c649b7802f3bf",
+        "parentUid" : "8d695518977213b36198e5d7440c6180",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079055,
+          "stop" : 1738335079219,
+          "duration" : 164
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "8d695518977213b36198e5d7440c6180"
+    }, {
+      "name" : "Failed to validate JSON text:\r\n{\"message\":\"I am flying :)\"} Values not equal for entry: 'message', expected 'Wings are not detected' but was 'I am flying :)'",
+      "children" : [ {
+        "name" : "Проверка полета утки с состоянием крыльев UNDEFINED",
+        "uid" : "f7d39c714207aaf8",
+        "parentUid" : "f8d0bc62062283eba53f9d8fe5f7137d",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079236,
+          "stop" : 1738335079276,
+          "duration" : 40
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "f8d0bc62062283eba53f9d8fe5f7137d"
+    }, {
+      "name" : "Failed to validate JSON text:\r\n{\"sound\":\"quack-quack, quack-quack, quack-quack\"} Values not equal for entry: 'sound', expected 'quack-quack-quack, quack-quack-quack' but was 'quack-quack, quack-quack, quack-quack'",
+      "children" : [ {
+        "name" : "Проверка того, что утки с нечетным id издают звуки",
+        "uid" : "57bb9f434c40ba4f",
+        "parentUid" : "02d7831e83340cefd90b33c175904a03",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079236,
+          "stop" : 1738335079280,
+          "duration" : 44
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "02d7831e83340cefd90b33c175904a03"
+    }, {
+      "name" : "Validation failed: Values not equal for header element 'citrus_http_reason_phrase', expected 'OK' but was 'NOT_FOUND'",
+      "children" : [ {
+        "name" : "Проверка того, что уточка c корректным id поплыла",
+        "uid" : "1dc508954d61bb9e",
+        "parentUid" : "2cfdddf6c3f5fa24fa838a5e77e89e0f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079244,
+          "stop" : 1738335079286,
+          "duration" : 42
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "2cfdddf6c3f5fa24fa838a5e77e89e0f"
+    }, {
+      "name" : "Failed to validate JSON text:\r\n{\"color\":\"blue\",\"height\":30.0,\"material\":\"rubber\",\"sound\":\"quack\",\"wingsState\":\"FIXED\"} Values not equal for entry: 'height', expected '0.3' but was '30.0'",
+      "children" : [ {
+        "name" : "Проверка обновления цвета и высоты утки",
+        "uid" : "d4695b13319a00f8",
+        "parentUid" : "eadf89ae8732d90beaccc4187d755c49",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079361,
+          "stop" : 1738335079400,
+          "duration" : 39
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "eadf89ae8732d90beaccc4187d755c49"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

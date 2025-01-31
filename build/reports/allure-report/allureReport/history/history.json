@@ -1,0 +1,278 @@
+{
+  "fa89225fe2bf39f41abde3f8d0a8f4db" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "18e57d1bef573e80",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{} Number of JSON entries not equal for element: '$.', expected '5' but was '0'",
+      "time" : {
+        "start" : 1738335079410,
+        "stop" : 1738335079443,
+        "duration" : 33
+      }
+    } ]
+  },
+  "4bd95553ae92c5250f85a9705acaafa4" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c3c62d7c1c6587a5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738335079300,
+        "stop" : 1738335079343,
+        "duration" : 43
+      }
+    } ]
+  },
+  "bc887c4830b2399921b0b89ca5e65db5" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "885c649b7802f3bf",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can't fly' but was 'I can not fly :C'",
+      "time" : {
+        "start" : 1738335079055,
+        "stop" : 1738335079219,
+        "duration" : 164
+      }
+    } ]
+  },
+  "8b5e16f08cc629a8c4bdb863f93c006d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6f225fa415ceb7a1",
+      "status" : "broken",
+      "statusDetails" : "org.springframework.dao.DuplicateKeyException: StatementCallback; SQL [insert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'ACTIVE')]; Нарушение уникального индекса или первичного ключа: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"\nUnique index or primary key violation: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"; SQL statement:\ninsert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'ACTIVE') [23505-196]; nested exception is org.h2.jdbc.JdbcSQLException: Нарушение уникального индекса или первичного ключа: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"\nUnique index or primary key violation: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"; SQL statement:\ninsert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'ACTIVE') [23505-196]\r\n\tat org.h2.message.DbException.getJdbcSQLException(DbException.java:345)\r\n\tat org.h2.message.DbException.get(DbException.java:179)\r\n\tat org.h2.message.DbException.get(DbException.java:155)\r\n\tat org.h2.mvstore.db.MVPrimaryIndex.add(MVPrimaryIndex.java:139)\r\n\tat org.h2.mvstore.db.MVTable.addRow(MVTable.java:705)\r\n\tat org.h2.command.dml.Insert.insertRows(Insert.java:156)\r\n\tat org.h2.command.dml.Insert.update(Insert.java:114)\r\n\tat org.h2.command.CommandContainer.update(CommandContainer.java:101)\r\n\tat org.h2.command.Command.executeUpdate(Command.java:260)\r\n\tat org.h2.server.TcpServerThread.process(TcpServerThread.java:354)\r\n\tat org.h2.server.TcpServerThread.run(TcpServerThread.java:158)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1575)\r\n",
+      "time" : {
+        "start" : 1738335078592,
+        "stop" : 1738335079023,
+        "duration" : 431
+      }
+    } ]
+  },
+  "c3583f4e52b77c27982c1318c9e93396" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "993da0ec2397d03b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738335079415,
+        "stop" : 1738335079437,
+        "duration" : 22
+      }
+    } ]
+  },
+  "8fbb6a32945d67a214b51f0977b8ff53" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "33e8e7468502f49e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738335079300,
+        "stop" : 1738335079374,
+        "duration" : 74
+      }
+    } ]
+  },
+  "7e0140a361cf9adf6d2dc6312022ed2d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9799adbe77c889d8",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{} Number of JSON entries not equal for element: '$.', expected '5' but was '0'",
+      "time" : {
+        "start" : 1738335079055,
+        "stop" : 1738335079220,
+        "duration" : 165
+      }
+    } ]
+  },
+  "4d70e47d96055c606959863e28f42da0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1dc508954d61bb9e",
+      "status" : "broken",
+      "statusDetails" : "Validation failed: Values not equal for header element 'citrus_http_reason_phrase', expected 'OK' but was 'NOT_FOUND'",
+      "time" : {
+        "start" : 1738335079244,
+        "stop" : 1738335079286,
+        "duration" : 42
+      }
+    } ]
+  },
+  "36c83ac3dc40f53a8fa5f574fcd7902b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f7d39c714207aaf8",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"message\":\"I am flying :)\"} Values not equal for entry: 'message', expected 'Wings are not detected' but was 'I am flying :)'",
+      "time" : {
+        "start" : 1738335079236,
+        "stop" : 1738335079276,
+        "duration" : 40
+      }
+    } ]
+  },
+  "fecbe40c721216db4d3d6292ae1c02c6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9e5bcf63fddabc41",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738335079292,
+        "stop" : 1738335079404,
+        "duration" : 112
+      }
+    } ]
+  },
+  "1f8b1a4543f092d3772f5cb61cbea7a4" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "57bb9f434c40ba4f",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"sound\":\"quack-quack, quack-quack, quack-quack\"} Values not equal for entry: 'sound', expected 'quack-quack-quack, quack-quack-quack' but was 'quack-quack, quack-quack, quack-quack'",
+      "time" : {
+        "start" : 1738335079236,
+        "stop" : 1738335079280,
+        "duration" : 44
+      }
+    } ]
+  },
+  "dfba6de8813ff8fe808ea44c1624e93" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a04dba0575094a6d",
+      "status" : "broken",
+      "statusDetails" : "org.springframework.dao.DuplicateKeyException: StatementCallback; SQL [insert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'FIXED')]; Нарушение уникального индекса или первичного ключа: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"\nUnique index or primary key violation: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"; SQL statement:\ninsert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'FIXED') [23505-196]; nested exception is org.h2.jdbc.JdbcSQLException: Нарушение уникального индекса или первичного ключа: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"\nUnique index or primary key violation: \"PRIMARY KEY ON PUBLIC.DUCK(ID)\"; SQL statement:\ninsert into DUCK (id, color, height, material, sound, wings_state) values (222, 'red', 0.53, 'metal', 'quack', 'FIXED') [23505-196]\r\n\tat org.h2.message.DbException.getJdbcSQLException(DbException.java:345)\r\n\tat org.h2.message.DbException.get(DbException.java:179)\r\n\tat org.h2.message.DbException.get(DbException.java:155)\r\n\tat org.h2.mvstore.db.MVPrimaryIndex.add(MVPrimaryIndex.java:139)\r\n\tat org.h2.mvstore.db.MVTable.addRow(MVTable.java:705)\r\n\tat org.h2.command.dml.Insert.insertRows(Insert.java:156)\r\n\tat org.h2.command.dml.Insert.update(Insert.java:114)\r\n\tat org.h2.command.CommandContainer.update(CommandContainer.java:101)\r\n\tat org.h2.command.Command.executeUpdate(Command.java:260)\r\n\tat org.h2.server.TcpServerThread.process(TcpServerThread.java:354)\r\n\tat org.h2.server.TcpServerThread.run(TcpServerThread.java:158)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1575)\r\n",
+      "time" : {
+        "start" : 1738335078592,
+        "stop" : 1738335079023,
+        "duration" : 431
+      }
+    } ]
+  },
+  "257e48b2e3fa861992fd0714d5edcf23" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d4695b13319a00f8",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"color\":\"blue\",\"height\":30.0,\"material\":\"rubber\",\"sound\":\"quack\",\"wingsState\":\"FIXED\"} Values not equal for entry: 'height', expected '0.3' but was '30.0'",
+      "time" : {
+        "start" : 1738335079361,
+        "stop" : 1738335079400,
+        "duration" : 39
+      }
+    } ]
+  },
+  "c24748ddb710f76c2e1e4fb1a56ffa66" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "646e3cf6369fa12f",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"sound\":\"moo-moo, moo-moo, moo-moo\"} Values not equal for entry: 'sound', expected 'quack-quack-quack, quack-quack-quack' but was 'moo-moo, moo-moo, moo-moo'",
+      "time" : {
+        "start" : 1738335078592,
+        "stop" : 1738335079221,
+        "duration" : 629
+      }
+    } ]
+  }
+}

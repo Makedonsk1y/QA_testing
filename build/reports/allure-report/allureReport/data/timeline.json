@@ -1,0 +1,203 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-HCFPEAN",
+    "children" : [ {
+      "name" : "10432@DESKTOP-HCFPEAN.TestNG-test=Gradle test-2(30)",
+      "children" : [ {
+        "name" : "Проверка обновления цвета и звука утки",
+        "uid" : "18e57d1bef573e80",
+        "parentUid" : "7b9499b728834d7ff89c50ebb7c3b180",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079410,
+          "stop" : 1738335079443,
+          "duration" : 33
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка того, что выводятся свойства уточки с четным ID",
+        "uid" : "a04dba0575094a6d",
+        "parentUid" : "7b9499b728834d7ff89c50ebb7c3b180",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335078592,
+          "stop" : 1738335079023,
+          "duration" : 431
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка того, что выводятся свойства уточки с нечетным id",
+        "uid" : "9799adbe77c889d8",
+        "parentUid" : "7b9499b728834d7ff89c50ebb7c3b180",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079055,
+          "stop" : 1738335079220,
+          "duration" : 165
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка, плавает ли уточка с несуществующим id",
+        "uid" : "c3c62d7c1c6587a5",
+        "parentUid" : "7b9499b728834d7ff89c50ebb7c3b180",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738335079300,
+          "stop" : 1738335079343,
+          "duration" : 43
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка обновления цвета и высоты утки",
+        "uid" : "d4695b13319a00f8",
+        "parentUid" : "7b9499b728834d7ff89c50ebb7c3b180",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079361,
+          "stop" : 1738335079400,
+          "duration" : 39
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка того, что уточка c корректным id поплыла",
+        "uid" : "1dc508954d61bb9e",
+        "parentUid" : "7b9499b728834d7ff89c50ebb7c3b180",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079244,
+          "stop" : 1738335079286,
+          "duration" : 42
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "7b9499b728834d7ff89c50ebb7c3b180"
+    }, {
+      "name" : "10432@DESKTOP-HCFPEAN.TestNG-test=Gradle test-1(29)",
+      "children" : [ {
+        "name" : "Проверка создания утки с материалом rubber",
+        "uid" : "9e5bcf63fddabc41",
+        "parentUid" : "6df6fc3a0c6a73e9261f21fb3ac6db22",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738335079292,
+          "stop" : 1738335079404,
+          "duration" : 112
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка полета утки с состоянием крыльев UNDEFINED",
+        "uid" : "f7d39c714207aaf8",
+        "parentUid" : "6df6fc3a0c6a73e9261f21fb3ac6db22",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079236,
+          "stop" : 1738335079276,
+          "duration" : 40
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка полета утки с состоянием крыльев ACTIVE",
+        "uid" : "6f225fa415ceb7a1",
+        "parentUid" : "6df6fc3a0c6a73e9261f21fb3ac6db22",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335078592,
+          "stop" : 1738335079023,
+          "duration" : 431
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка создания утки с материалом wood",
+        "uid" : "993da0ec2397d03b",
+        "parentUid" : "6df6fc3a0c6a73e9261f21fb3ac6db22",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738335079415,
+          "stop" : 1738335079437,
+          "duration" : 22
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка полета утки с состоянием крыльев FIXED",
+        "uid" : "885c649b7802f3bf",
+        "parentUid" : "6df6fc3a0c6a73e9261f21fb3ac6db22",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079055,
+          "stop" : 1738335079219,
+          "duration" : 164
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "6df6fc3a0c6a73e9261f21fb3ac6db22"
+    }, {
+      "name" : "10432@DESKTOP-HCFPEAN.TestNG-test=Gradle test-3(31)",
+      "children" : [ {
+        "name" : "Проверка удаления утки",
+        "uid" : "33e8e7468502f49e",
+        "parentUid" : "ed60518e6c0a8e8a43ad257bc06b07d9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738335079300,
+          "stop" : 1738335079374,
+          "duration" : 74
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка того, что утки с нечетным id издают звуки",
+        "uid" : "57bb9f434c40ba4f",
+        "parentUid" : "ed60518e6c0a8e8a43ad257bc06b07d9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335079236,
+          "stop" : 1738335079280,
+          "duration" : 44
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Проверка того, что утки с четным id издают звуки",
+        "uid" : "646e3cf6369fa12f",
+        "parentUid" : "ed60518e6c0a8e8a43ad257bc06b07d9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738335078592,
+          "stop" : 1738335079221,
+          "duration" : 629
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "ed60518e6c0a8e8a43ad257bc06b07d9"
+    } ],
+    "uid" : "828594a2aa02bb6294590240f1cbc3d8"
+  } ]
+}

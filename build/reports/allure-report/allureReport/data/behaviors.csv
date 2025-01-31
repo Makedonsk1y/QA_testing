@@ -1,0 +1,8 @@
+"Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+"Duck Controller","Duck Update /api/duck/update","","0","2","0","0","0"
+"Duck Action Controller","Duck Fly /api/duck/action/fly","","0","3","0","0","0"
+"Duck Controller","Duck create /api/duck/create","","0","0","2","0","0"
+"Duck Controller","Duck Delete /api/duck/delete","","0","0","1","0","0"
+"Duck Action Controller","Duck Quack /api/duck/action/quack","","0","2","0","0","0"
+"Duck Action Controller","Duck Get Properties /api/duck/action/properties","","0","2","0","0","0"
+"Duck Action Controller","Duck Swim /api/duck/action/swim","","0","1","1","0","0"
