@@ -11,6 +11,8 @@ import io.qameta.allure.Feature;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
+import static com.consol.citrus.container.FinallySequence.Builder.doFinally;
+
 
 @Epic("Duck Controller")
 @Feature("Duck create /api/duck/create")
@@ -20,17 +22,11 @@ public class DuckCreateTest extends DuckActionsClient {
     public void createDuckWithMaterialRubber(@Optional @CitrusResource TestCaseRunner runner){
         Duck duck = new Duck().color("red").height(0.53).material("rubber").sound("quack").wingsState(WingsState.FIXED);
         createDuck(runner, duck);
-        validateDuckResponse(runner, duck);
-    }
-
-    @Test(description = "Проверка создания утки с материалом rubber через БД")
-    @CitrusTest
-    public void createDuckWithMaterialRubberDb(@Optional @CitrusResource TestCaseRunner runner){
-        Duck duck = new Duck().color("red").height(0.53).material("rubber").sound("quack").wingsState(WingsState.FIXED);
-        createDuck(runner, duck);
-        saveDuckId(runner);
-        validateDuckDb(runner,"${duckId}",duck.color(), String.valueOf(duck.height()), duck.material(), duck.sound(), duck.wingsState().toString());
-        deleteDuckDb(runner, "${duckId}");
+        validateDuckWithGetId(runner, "duckController/duckCreate/duckCreateRubber.json");
+        validateDuckDb(runner, "${duckId}", duck.color(), String.valueOf(duck.height()), duck.material(), duck.sound(), duck.wingsState().toString());
+        runner.$(
+                doFinally().actions(deleteDuckDb(runner, "${duckId}"))
+        );
     }
 
     @Test(description = "Проверка создания утки с материалом wood")
@@ -38,16 +34,10 @@ public class DuckCreateTest extends DuckActionsClient {
     public void createDuckWithMaterialWood(@Optional @CitrusResource TestCaseRunner runner){
         Duck duck = new Duck().color("red").height(0.53).material("wood").sound("quack").wingsState(WingsState.FIXED);
         createDuck(runner, duck);
-        validateDuckResponse(runner, "duckController/duckCreate/duckCreateWood.json");
-    }
-
-    @Test(description = "Проверка создания утки с материалом wood через БД")
-    @CitrusTest
-    public void createDuckWithMaterialWoodDb(@Optional @CitrusResource TestCaseRunner runner){
-        Duck duck = new Duck().color("red").height(0.53).material("wood").sound("quack").wingsState(WingsState.FIXED);
-        createDuck(runner, duck);
-        saveDuckId(runner);
-        validateDuckDb(runner,"${duckId}",duck.color(), String.valueOf(duck.height()), duck.material(), duck.sound(), duck.wingsState().toString());
-        deleteDuckDb(runner, "${duckId}");
+        validateDuckWithGetId(runner, "duckController/duckCreate/duckCreateWood.json");
+        validateDuckDb(runner, "${duckId}", duck.color(), String.valueOf(duck.height()), duck.material(), duck.sound(), duck.wingsState().toString());
+        runner.$(
+                doFinally().actions(deleteDuckDb(runner, "${duckId}"))
+        );
     }
 }

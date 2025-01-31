@@ -211,6 +211,20 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
         );
     }
 
+    public void validateDuckWithGetId(TestCaseRunner runner, String expectedPayload){
+        runner.$(
+                http()
+                        .client(duckService)
+                        .receive()
+                        .response(HttpStatus.OK)
+                        .message()
+                        .type(MessageType.JSON)
+                        .validate(json().ignore("$.id"))
+                        .body(new ClassPathResource(expectedPayload))
+                        .extract(fromBody().expression("$.id", "duckId"))
+        );
+    }
+
     //String
     public void validateResponse(TestCaseRunner runner, String expectedMessage){
         runner.$(
