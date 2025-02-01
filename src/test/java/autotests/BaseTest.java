@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import org.springframework.test.context.ContextConfiguration;
 
+import static com.consol.citrus.actions.ExecuteSQLAction.Builder.sql;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 import static com.consol.citrus.validation.DelegatingPayloadVariableExtractor.Builder.fromBody;
 import static com.consol.citrus.validation.json.JsonMessageValidationContext.Builder.json;
@@ -22,6 +24,15 @@ public class BaseTest extends TestNGCitrusSpringSupport {
 
     @Autowired
     protected HttpClient duckService;
+
+    @Autowired
+    protected SingleConnectionDataSource testDb;
+
+    protected void databaseUpdate(TestCaseRunner runner, String sql){
+        runner.$(
+                sql(testDb).statement(sql)
+        );
+    }
 
     protected void sendGetRequest(TestCaseRunner runner, HttpClient url, String path){
         runner.$(

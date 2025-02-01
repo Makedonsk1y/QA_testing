@@ -20,16 +20,7 @@ import static com.consol.citrus.validation.DelegatingPayloadVariableExtractor.Bu
 @ContextConfiguration(classes = {EndpointConfig.class})
 public class DuckActionsClient extends BaseTest {
 
-    @Autowired
-    protected SingleConnectionDataSource testDb;
-
     //DB methods
-
-    protected void databaseUpdate(TestCaseRunner runner, String sql){
-        runner.$(
-                sql(testDb).statement(sql)
-        );
-    }
 
     @Step("Delete duck from DB")
     public ExecuteSQLAction deleteDuckDb(TestCaseRunner runner, String id){
