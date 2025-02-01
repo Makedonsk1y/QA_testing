@@ -27,7 +27,7 @@ public class DuckUpdateTest extends DuckActionsClient {
         insertDuckDb(runner,duck.color(),String.valueOf(duck.height()), duck.material(), duck.sound(), duck.wingsState().toString());
         updateDuck(runner,"blue", 0.30, "rubber", "quack", "FIXED");
         getDuckProperties(runner);
-        validateDuckResponse(runner, "duckController/duckUpdate/checkDuckUpdateColorHeight.json");
+        validateResponseWithResource(runner, "duckController/duckUpdate/checkDuckUpdateColorHeight.json");
         validateDuckDb(runner, "${duckId}", "blue", String.valueOf(0.30), "rubber", "quack", "FIXED");
     }
 
@@ -42,7 +42,7 @@ public class DuckUpdateTest extends DuckActionsClient {
         insertDuckDb(runner,duck.color(),String.valueOf(duck.height()), duck.material(), duck.sound(), duck.wingsState().toString());
         updateDuck(runner,"yellow", 0.60, "plastic", "squeak", "ACTIVE");
         getDuckProperties(runner);
-        validateDuckResponse(runner, "duckController/duckUpdate/checkDuckUpdateColorSound.json");
+        validateResponseWithResource(runner, "duckController/duckUpdate/checkDuckUpdateColorSound.json");
         validateDuckDb(runner, "${duckId}", "yellow", String.valueOf(0.60), "plastic", "squeak", "ACTIVE");
     }
 }

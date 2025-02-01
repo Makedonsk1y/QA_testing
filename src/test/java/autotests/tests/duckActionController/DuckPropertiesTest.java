@@ -27,7 +27,7 @@ public class DuckPropertiesTest extends DuckActionsClient {
         Duck duck = new Duck().color("red").height(0.53).material("metal").sound("quack").wingsState(WingsState.FIXED);
         insertDuckDb(runner,duck.color(),String.valueOf(duck.height()), duck.material(), duck.sound(), duck.wingsState().toString());
         getDuckProperties(runner);
-        validateDuckResponse(runner, "duckActionController/duckGetProperties/duckPropertiesEvenId.json");
+        validateResponseWithResource(runner, "duckActionController/duckGetProperties/duckPropertiesEvenId.json");
     }
 
     @Test(description = "Проверка того, что выводятся свойства уточки с нечетным id")
@@ -41,6 +41,6 @@ public class DuckPropertiesTest extends DuckActionsClient {
         insertDuckDb(runner,duck.color(),String.valueOf(duck.height()), duck.material(), duck.sound(), duck.wingsState().toString());
         Properties properties = new Properties().color("green").height(0.60).material("plastic").sound("squeak").wingsState(WingsState.ACTIVE);
         getDuckProperties(runner);
-        validateDuckResponse(runner, properties);
+        validateResponse(runner, properties);
     }
 }
